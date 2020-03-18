@@ -64,6 +64,125 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Github-Blog" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/03/18/Github-Blog/" class="article-date">
+  <time datetime="2020-03-18T09:47:20.000Z" itemprop="datePublished">2020-03-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/18/Github-Blog/">Github-Blog</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="建構Blog-github"><a href="#建構Blog-github" class="headerlink" title="建構Blog-github"></a>建構Blog-github</h1><p>Blog幾乎現代工程師必備的工具，優點：</p>
+<ol>
+<li>發布tutorial</li>
+<li>提供與其他Developer的交流</li>
+<li>推薦自己</li>
+</ol>
+<p>將日常學習整理成tutorial，除了避免日後自己忘記，能夠快速熟悉曾經的學習外，還能夠建立留言板與其他Developer交流，互相學習。也能幫助其他人快速上手相同性質的開發，類似Open source的概念，通過其回饋社會。甚至在面試時，能夠作為能力的證明!</p>
+<h1 id="環境建置"><a href="#環境建置" class="headerlink" title="環境建置"></a>環境建置</h1><p>我們需要的環境如下：</p>
+<ol>
+<li>Node.js (用於方便安裝Hexo)</li>
+<li>git</li>
+<li>Hexo-git</li>
+<li>Hexo</li>
+<li>github帳號</li>
+</ol>
+<h2 id="Node-js"><a href="#Node-js" class="headerlink" title="Node.js"></a>Node.js</h2><p><img src="https://i.imgur.com/M9hdv8E.png" alt=""></p>
+<ol>
+<li><a href='https://tw.alphacamp.co/blog/node-js-and-javascript' target="_blank" rel="noopener">認識Node.js</a></li>
+<li><a href='https://nodejs.org/zh-tw/download/' target="_blank" rel="noopener">安裝Node.js</a></li>
+</ol>
+<h2 id="git"><a href="#git" class="headerlink" title="git"></a>git</h2><p><img src="https://i.imgur.com/TiT7c89.png" alt=""></p>
+<ol>
+<li><a href='https://gitbook.tw/chapters/introduction/what-is-git.html' target="_blank" rel="noopener">認識git</a></li>
+<li><a href='https://kknews.cc/zh-tw/code/n3e8l8g.html' target="_blank" rel="noopener">git與github的關係</a></li>
+<li><a href='https://git-scm.com/downloads' target="_blank" rel="noopener">安裝git</a><br>(如果原本有開著command line，安裝完git後需要重啟command line，環境變數才會寫入)</li>
+</ol>
+<p>通過檢查版本，來驗證是否安裝成功</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git --version</span><br></pre></td></tr></table></figure>
+
+<h2 id="Github"><a href="#Github" class="headerlink" title="Github"></a>Github</h2><p>登入<a href='https://github.com/' target="_blank" rel="noopener">github</a><br>找到右上角選單中Your repositaries (儲存庫)<br><img src="https://i.imgur.com/0CE9wpL.png" alt=""><br>新增一個Repository<br><img src="https://i.imgur.com/W7orlUs.png" alt=""><br>命名為你的帳號名稱<br><img src="https://i.imgur.com/QjeIrNU.png" alt=""><br>看到這個畫面就是創建成功了喔!<br><img src="https://i.imgur.com/QU3qwPP.png" alt=""></p>
+<h2 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h2><p>Hexo是一個快速、簡單且高效的Blog框架，我們可以使用node.js快速布置它。<br>它可以使非web開發人員，須要自己的Blog時，省去很多時間，並專注於內容的編寫。<br>Hexo產生出來的Blog支援MarkDown語法，並可以建置在github空間上!實在非常方便。</p>
+<p><a href='https://hexo.io/zh-cn/' target="_blank" rel="noopener">中文API</a></p>
+<h2 id="安裝Hexo-git"><a href="#安裝Hexo-git" class="headerlink" title="安裝Hexo-git"></a>安裝Hexo-git</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+
+<h2 id="安裝Hexo"><a href="#安裝Hexo" class="headerlink" title="安裝Hexo"></a>安裝Hexo</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
+<p>通過檢查版本，來驗證是否安裝成功</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo version</span><br></pre></td></tr></table></figure>
+
+<h1 id="實作"><a href="#實作" class="headerlink" title="實作"></a>實作</h1><h2 id="建構blog的架構"><a href="#建構blog的架構" class="headerlink" title="建構blog的架構"></a>建構blog的架構</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init blog    #建構blog架構</span><br><span class="line">$ cd blog           #進入剛剛hexo建構的資料夾中</span><br><span class="line">$ npm install       #通過npm幫我們安裝、紀錄hexo建構的架構中 所需的套件</span><br></pre></td></tr></table></figure>
+<p>建構完成後，blog目錄結構如下：</p>
+<blockquote>
+<p>.<br>├── _config.yml<br>├── package.json<br>├── scaffolds<br>├── source<br>│   ├── _drafts<br>│   └── _posts<br>└── themes</p>
+</blockquote>
+<p>延伸閱讀：<a href='https://ithelp.ithome.com.tw/articles/10191783' target="_blank" rel="noopener">npm install做了什麼</a></p>
+<h3 id="config-yml"><a href="#config-yml" class="headerlink" title="_config.yml"></a>_config.yml</h3><p>網站的<a href='https://hexo.io/zh-cn/docs/setup#config-yml' target="_blank" rel="noopener">設定</a>信息，可以在此設定大部分的參數。</p>
+<h3 id="package-json"><a href="#package-json" class="headerlink" title="package.json"></a>package.json</h3><p>網站的資本資料、套件名稱紀錄。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">package.json</span><br><span class="line">&#123;</span><br><span class="line">  &quot;name&quot;: &quot;hexo-site&quot;,</span><br><span class="line">  &quot;version&quot;: &quot;0.0.0&quot;,</span><br><span class="line">  &quot;private&quot;: true,</span><br><span class="line">  &quot;hexo&quot;: &#123;</span><br><span class="line">    &quot;version&quot;: &quot;&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;dependencies&quot;: &#123;</span><br><span class="line">    &quot;hexo&quot;: &quot;^3.8.0&quot;,</span><br><span class="line">    &quot;hexo-generator-archive&quot;: &quot;^0.1.5&quot;,</span><br><span class="line">    &quot;hexo-generator-category&quot;: &quot;^0.1.3&quot;,</span><br><span class="line">    &quot;hexo-generator-index&quot;: &quot;^0.2.1&quot;,</span><br><span class="line">    &quot;hexo-generator-tag&quot;: &quot;^0.2.0&quot;,</span><br><span class="line">    &quot;hexo-renderer-ejs&quot;: &quot;^0.3.1&quot;,</span><br><span class="line">    &quot;hexo-renderer-stylus&quot;: &quot;^0.3.3&quot;,</span><br><span class="line">    &quot;hexo-renderer-marked&quot;: &quot;^0.3.2&quot;,</span><br><span class="line">    &quot;hexo-server&quot;: &quot;^0.3.3&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="scaffolds"><a href="#scaffolds" class="headerlink" title="scaffolds"></a>scaffolds</h3><p><a href='https://hexo.io/zh-cn/docs/writing' target="_blank" rel="noopener">模版</a>文件夹。當發布新文章時，Hexo 會根據 scaffold 來建立文件。</p>
+<h3 id="source"><a href="#source" class="headerlink" title="source"></a>source</h3><p>資源文件夾是存放用户資源的地方。除 _posts 文件夹之外，開頭命名為 _ (下滑線)的文件 / 文件夹和隐藏的文件将会被忽略。Markdown 和 HTML 文件会被解析并放到 public 文件夹，而其他文件会被拷贝过去。</p>
+<h3 id="themes"><a href="#themes" class="headerlink" title="themes"></a>themes</h3><p><a href='https://hexo.io/zh-cn/docs/themes' target="_blank" rel="noopener">主题</a> 文件夹。Hexo 會根据主題來生成静態頁面。</p>
+<h2 id="設定blog-config"><a href="#設定blog-config" class="headerlink" title="設定blog config"></a>設定blog config</h2><p>接著，我們需要發布我們的blog到Github repository!<br><img src="https://i.imgur.com/kXLw9ZD.png" alt=""></p>
+<p>在blog資料夾底下，可以發現一隻檔案名叫<b>config.yml</b>，OS為windows的朋友，可以用記事本開啟它。<br><img src="https://i.imgur.com/Kd1j4Xg.png" alt=""><br>在第一行，它告訴我們，它是一隻Hexo套件的設定檔，接著拉到檔案的最下方。可以找到：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># Deployment</span><br><span class="line">## Docs: https:&#x2F;&#x2F;hexo.io&#x2F;docs&#x2F;deployment.html</span><br><span class="line">deploy:</span><br><span class="line">  type:</span><br></pre></td></tr></table></figure>
+<p>將設定發布的這部分改為：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># Deployment</span><br><span class="line">## Docs: https:&#x2F;&#x2F;hexo.io&#x2F;docs&#x2F;deployment.html</span><br><span class="line">deploy:</span><br><span class="line">type: git</span><br><span class="line">  repository: 你的github repository網址</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+<p><font color="#dd0000">注意!! 在每個設定項後面，<b>必須空一格</b>，例：type: git</font><br>網址可以在這個介面中找到<br><img src="https://i.imgur.com/npaD3dq.png" alt=""><br>編輯完設定檔後，我們就可以準備發布服務了喔!</p>
+<h2 id="本地端運行、發布服務"><a href="#本地端運行、發布服務" class="headerlink" title="本地端運行、發布服務"></a>本地端運行、發布服務</h2><p>在發布服務之前，我們可以先透過hexo將網站伺服器建立起來，並先檢查有沒有錯誤。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>本地端server運行後，連上本地端，先看看發布後的結果。</p>
+<blockquote>
+<p><a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo d -g</span><br></pre></td></tr></table></figure>
+<p>如果正常發布的話，會看到hexo-deployer-git要求登入喔<br><img src="https://i.imgur.com/P6b9fq0.png" alt=""><br><br><font color="#dd0000">注意!! 如果在發布過程中遇到這個錯誤，請在執行一次安裝hexo-deployer-git的指令</font><br><img src="https://i.imgur.com/zNIUWFQ.png" alt=""></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<h2 id="檢查是否發布成功"><a href="#檢查是否發布成功" class="headerlink" title="檢查是否發布成功"></a>檢查是否發布成功</h2><p>在發布完成後，我們可以透過這串網址，造訪我們的blog。</p>
+<blockquote>
+<p>https://你的github帳號.github.io/</p>
+</blockquote>
+<p><img src="https://i.imgur.com/0LoOKW4.png" alt=""></p>
+<h2 id="yml副檔名"><a href="#yml副檔名" class="headerlink" title="yml副檔名"></a>yml副檔名</h2><p>yml、yaml附檔名屬於YAML資料格式，YAML是一個可讀性高，用來表達資料序列化的格式。YAML參考了其他多種語言，包括：C語言、Python、Perl，並從XML、電子郵件的資料格式（RFC 2822）並從中獲得靈感。。目前已經有數種程式語言或手稿語言支援（或者說解析）這種語言。</p>
+<p>YAML是”YAML Ain’t a Markup Language”（YAML不是一種標記語言）。在開發的這種語言時，YAML 的意思其實是：”Yet Another Markup Language”（仍是一種標記語言），但為了強調這種語言以資料做為中心，而不是以標記語言為重點，而用反向縮略語重新命名。<br>以上資料來自<a href='https://zh.wikipedia.org/wiki/YAML' target="_blank" rel="noopener">YAML-維基百科</a></p>
+<h1 id="發布文章"><a href="#發布文章" class="headerlink" title="發布文章"></a>發布文章</h1><h2 id="創建文章"><a href="#創建文章" class="headerlink" title="創建文章"></a>創建文章</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new [postName]</span><br></pre></td></tr></table></figure>
+<p>新增完後，在source/_post底下，會看到剛剛新創的檔案，將內容直接新增在裡面就可以了。</p>
+<p>推薦MD編輯器：<a href='https://hackmd.io/?nav=overview' target="_blank" rel="noopener">HackMD</a></p>
+<h2 id="刪除文章"><a href="#刪除文章" class="headerlink" title="刪除文章"></a>刪除文章</h2><p>在source/_post底下，會看到所有發布的文章，將文章直接刪除即可。</p>
+<h2 id="亂碼問題"><a href="#亂碼問題" class="headerlink" title="亂碼問題"></a>亂碼問題</h2><p>如果發現內容是亂碼，將檔案儲存為UTF-8編碼。</p>
+<p>window實作方式：<br>用記事本開啟檔案 -&gt; 另存新檔 -&gt; 編碼選擇 “UTF-8”</p>
+<p>編碼更改完成後，執行以下指令，就可以重新佈署!</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+
+<h1 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h1><p><a href='https://yaoandy107.github.io/hexo-tutorial/#more' target="_blank" rel="noopener">Hexo+GitHub，新手也可以快速建立部落格</a><br><a href='https://hexo.io/zh-cn/' target="_blank" rel="noopener">Hexo 官方文件(含API)</a><br><a href='https://blog.csdn.net/jiluben/article/details/40656935' target="_blank" rel="noopener">解决hexo博客的乱码问题</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/03/18/Github-Blog/" data-id="ck7x5896y0000rstq3iwl7edf" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-lineBot-python" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/03/18/lineBot-python/" class="article-date">
@@ -309,6 +428,10 @@ flask</code></pre><p><img src="https://paper-attachments.dropbox.com/s_828333F73
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2020/03/18/Github-Blog/">Github-Blog</a>
+          </li>
         
           <li>
             <a href="/2020/03/18/lineBot-python/">lineBot_basic</a>
