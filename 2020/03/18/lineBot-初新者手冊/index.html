@@ -7,12 +7,12 @@
   
   <title>lineBot_basic | Linus&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="LineBot��ߪ̤�U�B�@��z Line�z�LWebhook���޳N�PLineBot�s���C��User�z�LLine�ǰT����Line@�ɡALine@�|�ھګ�O�]�w��Webhook�N�T���z�LPost���覡�ǵ�LineBot�C Webhook�޳NWebhook�O���@�Ӻ����P�t�@�Ӻ����q�LURL���覡�i��”����">
+  <meta name="description" content="LineBot初心者手冊運作原理 Line透過Webhook的技術與LineBot連接。當User透過Line傳訊息給Line@時，Line@會根據後臺設定的Webhook將訊息透過Post的方式傳給LineBot。 Webhook技術Webhook是讓一個網站與另一個網站通過URL的方式進行”掛勾”。有些人會稱為”訂閱”或是”連接”，主要的意思是讓彼此知道對方的存在。 Webhook應用案例一：">
 <meta property="og:type" content="article">
 <meta property="og:title" content="lineBot_basic">
 <meta property="og:url" content="http://yoursite.com/2020/03/18/lineBot-%E5%88%9D%E6%96%B0%E8%80%85%E6%89%8B%E5%86%8A/">
 <meta property="og:site_name" content="Linus&#39;s Blog">
-<meta property="og:description" content="LineBot��ߪ̤�U�B�@��z Line�z�LWebhook���޳N�PLineBot�s���C��User�z�LLine�ǰT����Line@�ɡALine@�|�ھګ�O�]�w��Webhook�N�T���z�LPost���覡�ǵ�LineBot�C Webhook�޳NWebhook�O���@�Ӻ����P�t�@�Ӻ����q�LURL���覡�i��”����">
+<meta property="og:description" content="LineBot初心者手冊運作原理 Line透過Webhook的技術與LineBot連接。當User透過Line傳訊息給Line@時，Line@會根據後臺設定的Webhook將訊息透過Post的方式傳給LineBot。 Webhook技術Webhook是讓一個網站與另一個網站通過URL的方式進行”掛勾”。有些人會稱為”訂閱”或是”連接”，主要的意思是讓彼此知道對方的存在。 Webhook應用案例一：">
 <meta property="og:locale" content="zh_TW">
 <meta property="og:image" content="https://paper-attachments.dropbox.com/s_828333F7311CC325EADC5FFFBB545086BF783017D2B68027B72BB9B1C9ACCB3A_1578803234295_image.png">
 <meta property="og:image" content="https://paper-attachments.dropbox.com/s_828333F7311CC325EADC5FFFBB545086BF783017D2B68027B72BB9B1C9ACCB3A_1578808728031_image.png">
@@ -24,6 +24,7 @@
 <meta property="og:image" content="https://paper-attachments.dropbox.com/s_828333F7311CC325EADC5FFFBB545086BF783017D2B68027B72BB9B1C9ACCB3A_1578830306384_image.png">
 <meta property="og:image" content="https://paper-attachments.dropbox.com/s_828333F7311CC325EADC5FFFBB545086BF783017D2B68027B72BB9B1C9ACCB3A_1578831233237_image.png">
 <meta property="og:image" content="https://paper-attachments.dropbox.com/s_828333F7311CC325EADC5FFFBB545086BF783017D2B68027B72BB9B1C9ACCB3A_1578831508333_image.png">
+<meta property="og:image" content="https://paper-attachments.dropbox.com/s_828333F7311CC325EADC5FFFBB545086BF783017D2B68027B72BB9B1C9ACCB3A_1578832353754_image.png">
 <meta property="og:image" content="https://paper-attachments.dropbox.com/s_828333F7311CC325EADC5FFFBB545086BF783017D2B68027B72BB9B1C9ACCB3A_1578832821141_image.png">
 <meta property="og:image" content="https://paper-attachments.dropbox.com/s_828333F7311CC325EADC5FFFBB545086BF783017D2B68027B72BB9B1C9ACCB3A_1578832940988_image.png">
 <meta property="og:image" content="https://paper-attachments.dropbox.com/s_828333F7311CC325EADC5FFFBB545086BF783017D2B68027B72BB9B1C9ACCB3A_1578833183142_image.png">
@@ -41,7 +42,7 @@
 <meta property="og:image" content="https://paper-attachments.dropbox.com/s_828333F7311CC325EADC5FFFBB545086BF783017D2B68027B72BB9B1C9ACCB3A_1578846722968_image.png">
 <meta property="og:image" content="https://paper-attachments.dropbox.com/s_828333F7311CC325EADC5FFFBB545086BF783017D2B68027B72BB9B1C9ACCB3A_1578847681395_image.png">
 <meta property="article:published_time" content="2020-03-18T07:50:50.000Z">
-<meta property="article:modified_time" content="2020-03-18T07:52:11.192Z">
+<meta property="article:modified_time" content="2020-03-18T08:25:33.146Z">
 <meta property="article:author" content="Linus">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://paper-attachments.dropbox.com/s_828333F7311CC325EADC5FFFBB545086BF783017D2B68027B72BB9B1C9ACCB3A_1578803234295_image.png">
@@ -115,137 +116,137 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="LineBot��ߪ̤�U"><a href="#LineBot��ߪ̤�U" class="headerlink" title="LineBot��ߪ̤�U"></a>LineBot��ߪ̤�U</h1><h2 id="�B�-��z"><a href="#�B�-��z" class="headerlink" title="�B�@��z"></a>�B�@��z</h2><p><img src="https://paper-attachments.dropbox.com/s_828333F7311CC325EADC5FFFBB545086BF783017D2B68027B72BB9B1C9ACCB3A_1578803234295_image.png" alt="Line@�OLine�x��b��"></p>
-<p>Line�z�LWebhook���޳N�PLineBot�s���C<br>��User�z�LLine�ǰT����Line@�ɡALine@�|�ھګ�O�]�w��Webhook�N�T���z�LPost���覡�ǵ�LineBot�C</p>
-<h2 id="Webhook�޳N"><a href="#Webhook�޳N" class="headerlink" title="Webhook�޳N"></a>Webhook�޳N</h2><p>Webhook�O���@�Ӻ����P�t�@�Ӻ����q�LURL���覡�i��”����”�C<br>���ǤH�|�٬�”�q�&quot;�άO”�s��”�A�D�n���N��O���������D��誺�s�b�C</p>
-<h2 id="Webhook����"><a href="#Webhook����" class="headerlink" title="Webhook����"></a>Webhook����</h2><p>�רҤ@�G</p>
-<p>�a�̦��@�ӵN�������H�A���Ѫ��A�ȬO�N�X�������\�I�e���A�C<br>���A�{�l�j�ɡA�N�|�z�L”����”�B”�q�&quot;�B”�s��”���覡�A�q�������H�A�j�F�A�ӳo�˪��覡�]�\�O�A��۾����H���ܩάO�ާ@�����A�������H���n�\�I�A�N�e����w���a��C�H�o�ӨҤl�Ө��G</p>
+        <h1 id="LineBot初心者手冊"><a href="#LineBot初心者手冊" class="headerlink" title="LineBot初心者手冊"></a>LineBot初心者手冊</h1><h2 id="運作原理"><a href="#運作原理" class="headerlink" title="運作原理"></a>運作原理</h2><p><img src="https://paper-attachments.dropbox.com/s_828333F7311CC325EADC5FFFBB545086BF783017D2B68027B72BB9B1C9ACCB3A_1578803234295_image.png" alt="Line@是Line官方帳號"></p>
+<p>Line透過Webhook的技術與LineBot連接。<br>當User透過Line傳訊息給Line@時，Line@會根據後臺設定的Webhook將訊息透過Post的方式傳給LineBot。</p>
+<h2 id="Webhook技術"><a href="#Webhook技術" class="headerlink" title="Webhook技術"></a>Webhook技術</h2><p>Webhook是讓一個網站與另一個網站通過URL的方式進行”掛勾”。<br>有些人會稱為”訂閱”或是”連接”，主要的意思是讓彼此知道對方的存在。</p>
+<h2 id="Webhook應用"><a href="#Webhook應用" class="headerlink" title="Webhook應用"></a>Webhook應用</h2><p>案例一：</p>
+<p>家裡有一個煮飯機器人，提供的服務是煮出美味的餐點送給你。<br>當你肚子餓時，就會透過”掛勾”、”訂閱”、”連接”的方式，通知機器人你餓了，而這樣的方式也許是你對著機器人說話或是操作介面，當機器人做好餐點，就送到指定的地方。以這個例子而言：</p>
 <ul>
-<li>�q�\�̡G�A</li>
-<li>�A�ȴ��Ѫ̡G�����H</li>
-<li>�ʧ@�G�e�\���\��</li>
+<li>訂閱者：你</li>
+<li>服務提供者：機器人</li>
+<li>動作：送餐至餐桌</li>
 </ul>
-<p>�רҤG�G</p>
-<p>���Ӻ������Ѯ�H�w����T�A�i�H�w�ɶǰe��H��T���Τ�C<br>�M�ӻP�N�������H���P���O�A�����n��򰵥X�w��A���D�Τ�b���̩O?<br>�o��Webhook���޳N�N�ѨM�F�o�Ӱ��D�C</p>
+<p>案例二：</p>
+<p>有個網站提供氣象預報資訊，可以定時傳送氣象資訊給用戶。<br>然而與煮飯機器人不同的是，網站要怎麼做出定位，知道用戶在哪裡呢?<br>這時Webhook的技術就解決了這個問題。</p>
 <ul>
-<li>�q�\�̡G�Τ�</li>
-<li>�A�ȴ��Ѫ̡G����</li>
-<li>�ʧ@�G�ǰe��ƪ�^�Τ�</li>
+<li>訂閱者：用戶</li>
+<li>服務提供者：網站</li>
+<li>動作：傳送資料返回用戶</li>
 </ul>
-<p>�����H������򪾹D�Τ�b���̩O�A�P�N�������H���P�A�N�������H�]�m�b�a���A�ʧ@����ɥu�ݭn���\�I��m�\��A��H�����ݭn���D��T�ݭn��^�ܭ���C���ϥΪ̳z�LWebhook�s���ɡA��H�����i�H�z�L�ʥ]���ӷ�IP�A���D�����ӭn��^��Ƶ��֡C</p>
-<h2 id="�-����-Webhook����k"><a href="#�-����-Webhook����k" class="headerlink" title="�`����{Webhook����k"></a>�`����{Webhook����k</h2><ul>
+<p>那麼氣象網站怎麼知道用戶在哪裡呢，與煮飯機器人不同，煮飯機器人設置在家中，動作執行時只需要把餐點放置餐桌，氣象網站需要知道資訊需要返回至哪邊。當使用者透過Webhook連接時，氣象網站可以透過封包的來源IP，知道它應該要返回資料給誰。</p>
+<h2 id="常見實現Webhook的方法"><a href="#常見實現Webhook的方法" class="headerlink" title="常見實現Webhook的方法"></a>常見實現Webhook的方法</h2><ul>
 <li>Heroku</li>
-<li>ngrok<h2 id="Heroku����"><a href="#Heroku����" class="headerlink" title="Heroku����"></a>Heroku����</h2></li>
+<li>ngrok<h2 id="Heroku介紹"><a href="#Heroku介紹" class="headerlink" title="Heroku介紹"></a>Heroku介紹</h2></li>
 </ul>
-<p>Heroku�O�@�Ӥ䴩�h�ص{���y���������x�Y�A�ȡC�b2010�<del>�QSalesforce.com���ʡCHeroku�@���̤����������x���@�A�q2007�</del>6��_�}�o�A���ɥ��Ȥ䴩Ruby�A����ӼW�[�F��Java�BNode.js�BScala�BClojure�BPython�H��PHP�MPerl���䴩�C<br>���O�譱�AHeroku�ĥΤ�צ��O�A�q�L���Τ��P��Dyno�B��Ʈw�A�|�����P�����O����A���L����{�ڭ̪�LineBot�A�K�O��Dyno�Y�i�C Dyno�OHeroku�ۭq���w��e�����A�@��Dyno�i�H���@�����ε{������C</p>
+<p>Heroku是一個支援多種程式語言的雲平台即服務。在2010年被Salesforce.com收購。Heroku作為最元祖的雲平台之一，從2007年6月起開發，當時它僅支援Ruby，但後來增加了對Java、Node.js、Scala、Clojure、Python以及PHP和Perl的支援。<br>收費方面，Heroku採用方案收費，通過租用不同的Dyno、資料庫，會有不同的收費機制，不過對於實現我們的LineBot，免費的Dyno即可。 Dyno是Heroku自訂的硬體容器單位，一個Dyno可以讓一個應用程式執行。</p>
 <p><img src="https://paper-attachments.dropbox.com/s_828333F7311CC325EADC5FFFBB545086BF783017D2B68027B72BB9B1C9ACCB3A_1578808728031_image.png" alt="https://www.heroku.com/pricing"></p>
-<h2 id="Ngrok����"><a href="#Ngrok����" class="headerlink" title="Ngrok����"></a>Ngrok����</h2><p>Ngrok�O���ҫظm�u��A�Ω�q�L����NAT�Ψ�����V���a�D�����ѧY�ɦw����URL�C���}�o�̳q�L²�檺�ާ@�N���{Webhook���޳N�A²�ƶ}�o�̪��u�@�C<br>���O�譱�ANgrok�ĥΤ�צ��O�A�t�O�b�󴣨Ѥ��P���\��A���M�n�}�oLineBot�ɡA�K�O����קY�i�C���O��󥿦��ϥήɡA�K�O����׷|�Ͼ����C�����}�ɡA���sURL�A�ɭPLine@�PLineBot�S��k���Q�s���C</p>
+<h2 id="Ngrok介紹"><a href="#Ngrok介紹" class="headerlink" title="Ngrok介紹"></a>Ngrok介紹</h2><p>Ngrok是環境建置工具，用於通過任何NAT或防火牆向本地主機提供即時安全的URL。讓開發者通過簡單的操作就能實現Webhook的技術，簡化開發者的工作。<br>收費方面，Ngrok採用方案收費，差別在於提供不同的功能，雖然要開發LineBot時，免費的方案即可。但是對於正式使用時，免費的方案會使機器每次重開時，重製URL，導致Line@與LineBot沒辦法順利連接。</p>
 <p><img src="https://paper-attachments.dropbox.com/s_828333F7311CC325EADC5FFFBB545086BF783017D2B68027B72BB9B1C9ACCB3A_1578808662604_image.png" alt="https://ngrok.com/pricing"></p>
-<h1 id="���ҫظm"><a href="#���ҫظm" class="headerlink" title="���ҫظm"></a><strong>���ҫظm</strong></h1><p>�b�}�l�e�A�ݭn���</p>
+<h1 id="環境建置"><a href="#環境建置" class="headerlink" title="環境建置"></a><strong>環境建置</strong></h1><p>在開始前你需要具備</p>
 <ul>
-<li>Heroku �b��</li>
-<li>Line �b��</li>
+<li>Heroku 帳號</li>
+<li>Line 帳號</li>
 </ul>
-<h2 id="�ظmHeroku����"><a href="#�ظmHeroku����" class="headerlink" title="�ظmHeroku����"></a><strong>�ظmHeroku����</strong></h2><p>1.�n�J<a href="https://www.heroku.com/" target="_blank" rel="noopener">Heroku</a><br>�k�W������New �� create new app</p>
+<h2 id="建置Heroku環境"><a href="#建置Heroku環境" class="headerlink" title="建置Heroku環境"></a><strong>建置Heroku環境</strong></h2><p>1.登入<a href="https://www.heroku.com/" target="_blank" rel="noopener">Heroku</a><br>右上角有個New → create new app</p>
 <p><img src="https://paper-attachments.dropbox.com/s_828333F7311CC325EADC5FFFBB545086BF783017D2B68027B72BB9B1C9ACCB3A_1578826730823_image.png" alt=""></p>
-<p>2.��JAPP�W��</p>
+<p>2.輸入APP名稱</p>
 <p><img src="https://paper-attachments.dropbox.com/s_828333F7311CC325EADC5FFFBB545086BF783017D2B68027B72BB9B1C9ACCB3A_1578826990319_image.png" alt=""></p>
-<p>3.�˵�</p>
+<p>3.檢視</p>
 <p><img src="https://paper-attachments.dropbox.com/s_828333F7311CC325EADC5FFFBB545086BF783017D2B68027B72BB9B1C9ACCB3A_1578827696634_image.png" alt=""></p>
-<pre><code>�Ыا�APP��A�i�H�q���O�WOverview�ݨ�ثe����o��APP���귽�O�Ū��A���L�S���Y�A����ڭ̦b�C�C���㥦�C�ثe�u�n���DHeroku�W�������ظ귽�C</code></pre><h2 id="Heroku�귽����"><a href="#Heroku�귽����" class="headerlink" title="Heroku�귽����"></a>Heroku�귽����</h2><p>Heroku���w��귽�������</p>
+<pre><code>創建完APP後，可以從面板上Overview看到目前執行這個APP的資源是空的，不過沒關係，之後我們在慢慢完整它。目前只要知道Heroku上分為哪種資源。</code></pre><h2 id="Heroku資源介紹"><a href="#Heroku資源介紹" class="headerlink" title="Heroku資源介紹"></a>Heroku資源介紹</h2><p>Heroku的硬體資源分為兩種</p>
 <ul>
 <li>Add-ons</li>
 <li>Dyno</li>
 </ul>
-<p>Add-ons �O���Ѹ�Ʈw�B��ƳƷ��B�����X�i�B�{�Ǻʱ�…�U�ض}�o�u�㪺�귽�C</p>
+<p>Add-ons 是提供資料庫、資料備源、水平擴展、程序監控…各種開發工具的資源。</p>
 <p><img src="https://paper-attachments.dropbox.com/s_828333F7311CC325EADC5FFFBB545086BF783017D2B68027B72BB9B1C9ACCB3A_1578829991039_image.png" alt=""></p>
-<p>Dyno�O�@��Heroku�w�q���w��e���A�@�����ε{�ǦbHeroku�W����ݭn�@��Dyno�A�ӧڭ̦b���ݪŶ��W�A�]�����n���@���ɮ׫��w�o��APP���A�ݭn�X��Dyno�C�åB�b��x�]�w�C��Dyno���I�O��סC</p>
+<p>Dyno是一項Heroku定義的硬體容器，一個應用程序在Heroku上執行需要一個Dyno，而我們在雲端空間上，也必須要有一個檔案指定這項APP中，需要幾個Dyno。並且在後台設定每個Dyno的付費方案。</p>
 <p><img src="https://paper-attachments.dropbox.com/s_828333F7311CC325EADC5FFFBB545086BF783017D2B68027B72BB9B1C9ACCB3A_1578830306384_image.png" alt=""></p>
-<h2 id="Line-�BLine-Developer���ҫظm"><a href="#Line-�BLine-Developer���ҫظm" class="headerlink" title="Line@�BLine Developer���ҫظm"></a>Line@�BLine Developer���ҫظm</h2><ol>
-<li>�n�J<a href="https://developers.line.biz/zh-hant/" target="_blank" rel="noopener">Line Debelopers</a><br>�Ыش��Ѫ�</li>
+<h2 id="Line-、Line-Developer環境建置"><a href="#Line-、Line-Developer環境建置" class="headerlink" title="Line@、Line Developer環境建置"></a>Line@、Line Developer環境建置</h2><ol>
+<li>登入<a href="https://developers.line.biz/zh-hant/" target="_blank" rel="noopener">Line Debelopers</a><br>創建提供者</li>
 </ol>
-<p><img src="https://paper-attachments.dropbox.com/s_828333F7311CC325EADC5FFFBB545086BF783017D2B68027B72BB9B1C9ACCB3A_1578831233237_image.png" alt="�ʺ٧Y�i"></p>
+<p><img src="https://paper-attachments.dropbox.com/s_828333F7311CC325EADC5FFFBB545086BF783017D2B68027B72BB9B1C9ACCB3A_1578831233237_image.png" alt="暱稱即可"></p>
 <ol start="2">
-<li>�Ы�Message API channel</li>
+<li>創建Message API channel</li>
 </ol>
 <p><img src="https://paper-attachments.dropbox.com/s_828333F7311CC325EADC5FFFBB545086BF783017D2B68027B72BB9B1C9ACCB3A_1578831508333_image.png" alt=""></p>
-<p>![�`�N�Gchannel name7�Ѥ������ܧ�](<a href="https://paper-attachments.dropbox.com/s_828333F7311CC325EADC5FFFBB545086BF783017D2B68027B72BB9B1C9ACCB3A_1578832353754_image.png" target="_blank" rel="noopener">https://paper-attachments.dropbox.com/s_828333F7311CC325EADC5FFFBB545086BF783017D2B68027B72BB9B1C9ACCB3A_1578832353754_image.png</a>)</p>
-<h2 id="Line-���n�򥻸��"><a href="#Line-���n�򥻸��" class="headerlink" title="Line@���n�򥻸��"></a>Line@���n�򥻸��</h2><p>�Ыا����� �s���򥻸�ƥi�H�ݨ��X��������n�����</p>
+<p><img src="https://paper-attachments.dropbox.com/s_828333F7311CC325EADC5FFFBB545086BF783017D2B68027B72BB9B1C9ACCB3A_1578832353754_image.png" alt="注意：channel name7天內不能變更"></p>
+<h2 id="Line-重要基本資料"><a href="#Line-重要基本資料" class="headerlink" title="Line@重要基本資料"></a>Line@重要基本資料</h2><p>創建完成後 瀏覽基本資料可以看見幾項比較重要的資料</p>
 <p><img src="https://paper-attachments.dropbox.com/s_828333F7311CC325EADC5FFFBB545086BF783017D2B68027B72BB9B1C9ACCB3A_1578832821141_image.png" alt=""></p>
 <ul>
 <li>Channel secret<br><img src="https://paper-attachments.dropbox.com/s_828333F7311CC325EADC5FFFBB545086BF783017D2B68027B72BB9B1C9ACCB3A_1578832940988_image.png" alt=""><br><img src="https://paper-attachments.dropbox.com/s_828333F7311CC325EADC5FFFBB545086BF783017D2B68027B72BB9B1C9ACCB3A_1578833183142_image.png" alt=""></li>
 </ul>
-<p>�۷���LineBot����Line@�ɡA�ݭn���K�X�C<br>�p�G�����~�y�F�A�i�H�b�q�LIssue���s���s�o��C<br>�`�N�G1�p�ɥu��o��@��</p>
+<p>相當於LineBot控制Line@時，需要的密碼。<br>如果不幸外流了，可以在通過Issue按鈕重新發行。<br>注意：1小時只能發行一次</p>
 <ul>
 <li>User ID<br><img src="https://paper-attachments.dropbox.com/s_828333F7311CC325EADC5FFFBB545086BF783017D2B68027B72BB9B1C9ACCB3A_1578833015213_image.png" alt=""></li>
 </ul>
-<p>�o�O�Ыت̪�Line�b��ID�A�}�o���ծɡA�i�H�z�L�ۤv��Line ID�ǰT���ۤv�C</p>
+<p>這是創建者的Line帳號ID，開發測試時，可以透過自己的Line ID傳訊給自己。</p>
 <p><img src="https://paper-attachments.dropbox.com/s_828333F7311CC325EADC5FFFBB545086BF783017D2B68027B72BB9B1C9ACCB3A_1578832837664_image.png" alt=""></p>
 <ul>
 <li>Channel access token<br><img src="https://paper-attachments.dropbox.com/s_828333F7311CC325EADC5FFFBB545086BF783017D2B68027B72BB9B1C9ACCB3A_1578845002719_image.png" alt=""></li>
 </ul>
-<p>�ϥΦ��q�D�X�ݥO�P�ӽե�Messaging API�C<br>�o�Ӫ����s�b���O�P���|�L���C�n�o��s�O�P�δ����{���O�P�A�г���”Reissue”�o��C</p>
+<p>使用此通道訪問令牌來調用Messaging API。<br>這個長期存在的令牌不會過期。要發行新令牌或替換現有令牌，請單擊”Reissue”發行。</p>
 <ul>
-<li>Line@ ID�BQR code<br><img src="https://paper-attachments.dropbox.com/s_828333F7311CC325EADC5FFFBB545086BF783017D2B68027B72BB9B1C9ACCB3A_1578832852229_image.png" alt=""></li>
+<li>Line@ ID、QR code<br><img src="https://paper-attachments.dropbox.com/s_828333F7311CC325EADC5FFFBB545086BF783017D2B68027B72BB9B1C9ACCB3A_1578832852229_image.png" alt=""></li>
 </ul>
-<p>�q�LID�BQR code�A���ծɥ[�ۤv��Line@�n�ʹ��աC</p>
+<p>通過ID、QR code，測試時加自己的Line@好友測試。</p>
 <ul>
-<li>Webhook �]�w<br><img src="https://paper-attachments.dropbox.com/s_828333F7311CC325EADC5FFFBB545086BF783017D2B68027B72BB9B1C9ACCB3A_1578832872964_image.png" alt=""></li>
+<li>Webhook 設定<br><img src="https://paper-attachments.dropbox.com/s_828333F7311CC325EADC5FFFBB545086BF783017D2B68027B72BB9B1C9ACCB3A_1578832872964_image.png" alt=""></li>
 </ul>
-<p>Use Webhook�@�w�n�}�ҡA�T���~����ǵ�LineBot<br>Webhook URL</p>
-<pre><code>https://�A��APP�W��.herokuapp.com/callback</code></pre><h1 id="LineBot��"><a href="#LineBot��" class="headerlink" title="LineBot��@"></a>LineBot��@</h1><p>�b�B�@��z���A�ڭ̴���Line@�PLineBot���s���aWebhook�޳N�C������ӻ��A�ڭ̭n����{�O?</p>
-<h2 id="app-py"><a href="#app-py" class="headerlink" title="app.py"></a>app.py</h2><p>�Ыؤ@��workSpace��Ƨ��A�óz�L�s�边���g�@��app.py�d�ҵ{��</p>
+<p>Use Webhook一定要開啟，訊息才能轉傳給LineBot<br>Webhook URL</p>
+<pre><code>https://你的APP名稱.herokuapp.com/callback</code></pre><h1 id="LineBot實作"><a href="#LineBot實作" class="headerlink" title="LineBot實作"></a>LineBot實作</h1><p>在運作原理中，我們提到Line@與LineBot的連接靠Webhook技術。那具體來說，我們要怎麼實現呢?</p>
+<h2 id="app-py"><a href="#app-py" class="headerlink" title="app.py"></a>app.py</h2><p>創建一個workSpace資料夾，並透過編輯器撰寫一隻app.py範例程式</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask, request, abort</span><br><span class="line">    </span><br><span class="line"><span class="keyword">from</span> linebot <span class="keyword">import</span> (</span><br><span class="line">    LineBotApi, WebhookHandler</span><br><span class="line">)</span><br><span class="line"><span class="keyword">from</span> linebot.exceptions <span class="keyword">import</span> (</span><br><span class="line">    InvalidSignatureError</span><br><span class="line">)</span><br><span class="line"><span class="keyword">from</span> linebot.models <span class="keyword">import</span> (</span><br><span class="line">    MessageEvent, TextMessage, TextSendMessage,</span><br><span class="line">)</span><br><span class="line">    </span><br><span class="line">app = Flask(__name__)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Channel Access Token</span></span><br><span class="line">line_bot_api = LineBotApi(<span class="string">'YOUR_CHANNEL_ACCESS_TOKEN'</span>)</span><br><span class="line">    </span><br><span class="line"><span class="comment"># Channel Secret</span></span><br><span class="line">handler = WebhookHandler(<span class="string">'YOUR_CHANNEL_SECRET'</span>)</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line"><span class="meta">@app.route("/callback", methods=['POST'])</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">callback</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="comment"># get X-Line-Signature header value</span></span><br><span class="line">    signature = request.headers[<span class="string">'X-Line-Signature'</span>]</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># get request body as text</span></span><br><span class="line">    body = request.get_data(as_text=<span class="literal">True</span>)</span><br><span class="line">    app.logger.info(<span class="string">"Request body: "</span> + body)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># handle webhook body</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        handler.handle(body, signature)</span><br><span class="line">        <span class="keyword">except</span> InvalidSignatureError:</span><br><span class="line">        print(<span class="string">"Invalid signature. Please check your channel access token/channel secret."</span>)</span><br><span class="line">        abort(<span class="number">400</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="string">'OK'</span></span><br><span class="line"></span><br><span class="line">    </span><br><span class="line"><span class="meta">@handler.add(MessageEvent, message=TextMessage)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">handle_message</span><span class="params">(event)</span>:</span></span><br><span class="line">    line_bot_api.reply_message(</span><br><span class="line">        event.reply_token,</span><br><span class="line">        TextSendMessage(text=event.message.text))</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    app.run()</span><br></pre></td></tr></table></figure>
-<p>�N�o�ⶵ��� �ھ�Line Developer��x����ƴ���</p>
+<p>將這兩項資料 根據Line Developer後台的資料替換</p>
 <ul>
-<li>Channel access token (16��)</li>
-<li>Channel secret (19��)</li>
+<li>Channel access token (16行)</li>
+<li>Channel secret (19行)</li>
 </ul>
-<h2 id="Procfile"><a href="#Procfile" class="headerlink" title="Procfile"></a>Procfile</h2><p>Procfile�OHeroku�W�w�qapp�̦����ǪA�Ȫ��ɮסA�åB�q�L�o���ɮפ��tDyno<br>�`�N�G�p�G�S���W��Procfile���ܡAapp.py�O���|��Dyno���楦��</p>
-<p>�Ыؤ@��Procfile.txt</p>
-<p><img src="https://paper-attachments.dropbox.com/s_828333F7311CC325EADC5FFFBB545086BF783017D2B68027B72BB9B1C9ACCB3A_1578845599132_image.png" alt="Windows�t�Υ��Ы�txt�ɡAlinux�t�Ϊ��� �i�H�����إ��ɮ״N�n"></p>
-<pre><code>web: python app.py</code></pre><p><img src="https://paper-attachments.dropbox.com/s_828333F7311CC325EADC5FFFBB545086BF783017D2B68027B72BB9B1C9ACCB3A_1578845660165_image.png" alt="�s�觹�ɮ׫� �A�R�����ɦW"></p>
-<p>�p�G�z������Ƨ��̨S����ܰ��ɦW�A�i�H�q�L�W���˵�-&gt;���ɦW(����) �]�w</p>
+<h2 id="Procfile"><a href="#Procfile" class="headerlink" title="Procfile"></a>Procfile</h2><p>Procfile是Heroku上定義app裡有哪些服務的檔案，並且通過這個檔案分配Dyno<br>注意：如果沒有上傳Procfile的話，app.py是不會有Dyno執行它的</p>
+<p>創建一個Procfile.txt</p>
+<p><img src="https://paper-attachments.dropbox.com/s_828333F7311CC325EADC5FFFBB545086BF783017D2B68027B72BB9B1C9ACCB3A_1578845599132_image.png" alt="Windows系統先創建txt檔，linux系統的話 可以直接建立檔案就好"></p>
+<pre><code>web: python app.py</code></pre><p><img src="https://paper-attachments.dropbox.com/s_828333F7311CC325EADC5FFFBB545086BF783017D2B68027B72BB9B1C9ACCB3A_1578845660165_image.png" alt="編輯完檔案後 再刪除附檔名"></p>
+<p>如果您的文件資料夾裡沒有顯示副檔名，可以通過上方檢視-&gt;副檔名(打勾) 設定</p>
 <p><img src="https://paper-attachments.dropbox.com/s_828333F7311CC325EADC5FFFBB545086BF783017D2B68027B72BB9B1C9ACCB3A_1578845843942_image.png" alt=""></p>
-<h2 id="requirements-txt"><a href="#requirements-txt" class="headerlink" title="requirements.txt"></a>requirements.txt</h2><p>requirements.txt�Ω�����M�שһݦw�˪��M��W�١A�OHeroku�W�ظm���Ҫ��n�٦�A���F���ڭ̤W��lineBot��AHeroku�|�ھڸ̭������e�A�w�˧ڭ̪��A�ȩһݪ��M��C</p>
+<h2 id="requirements-txt"><a href="#requirements-txt" class="headerlink" title="requirements.txt"></a>requirements.txt</h2><p>requirements.txt用於紀錄專案所需安裝的套件名稱，是Heroku上建置環境的好夥伴，有了它我們上傳lineBot後，Heroku會根據裡面的內容，安裝我們的服務所需的套件。</p>
 <pre><code>line-bot-sdk
-flask</code></pre><p><img src="https://paper-attachments.dropbox.com/s_828333F7311CC325EADC5FFFBB545086BF783017D2B68027B72BB9B1C9ACCB3A_1578910434536_image.png" alt="�G�p�e �ڭ̪��ɮץؿ�"></p>
-<h1 id="�G�p�A��"><a href="#�G�p�A��" class="headerlink" title="�G�p�A��"></a><strong>�G�p�A��</strong></h1><p>�z�ݭn���w�ˡG</p>
+flask</code></pre><p><img src="https://paper-attachments.dropbox.com/s_828333F7311CC325EADC5FFFBB545086BF783017D2B68027B72BB9B1C9ACCB3A_1578910434536_image.png" alt="佈署前 我們的檔案目錄"></p>
+<h1 id="佈署服務"><a href="#佈署服務" class="headerlink" title="佈署服務"></a><strong>佈署服務</strong></h1><p>您需要先安裝：</p>
 <ul>
 <li><a href="https://devcenter.heroku.com/articles/heroku-cli" target="_blank" rel="noopener">Heroku CLI</a></li>
 <li><a href="https://git-scm.com/" target="_blank" rel="noopener">Git</a></li>
 </ul>
-<h2 id="Heroku-CLI"><a href="#Heroku-CLI" class="headerlink" title="Heroku CLI"></a>Heroku CLI</h2><p>Heroku�R�O��ɭ��]CLI�^�ϱo�����q�׺ݻ��P�ЫةM�޲zHeroku���ε{���ܱo�e���C�o�O�ϥ�Heroku�����n�����C</p>
-<h2 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h2><p>Heroku�G�ݪA�Ȫ����w�u��C<br>Git����������������t�ΡA�O���F��n�޲zLinux���֦Ӷ}�o���C�i�H���ɮת����A�@����s���v�O���O�s�_�ӡC�]���i�H��s��L���ɮ״_���H�e�����A�A�]�i�H��ܽs��L���e���t���C�ӥB�A�����H�Q�N�s��L�����ɮפW�Ǩ���A���B�л\��L�H���̷s�ɮ׮ɡA�t�η|�o�Xĵ�i�A�]���i�H�קK�b�L�N���л\�L�H���s�褺�e�C</p>
-<h2 id="�G�p�A��-git"><a href="#�G�p�A��-git" class="headerlink" title="�G�p�A�� - git"></a>�G�p�A�� - git</h2><ol>
-<li>�b��Ƨ����|�j�Mcmd</li>
+<h2 id="Heroku-CLI"><a href="#Heroku-CLI" class="headerlink" title="Heroku CLI"></a>Heroku CLI</h2><p>Heroku命令行界面（CLI）使得直接從終端輕鬆創建和管理Heroku應用程序變得容易。這是使用Heroku的必要部分。</p>
+<h2 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h2><p>Heroku佈屬服務的指定工具。<br>Git為分散式版本控制系統，是為了更好管理Linux內核而開發的。可以把檔案的狀態作為更新歷史記錄保存起來。因此可以把編輯過的檔案復原到以前的狀態，也可以顯示編輯過內容的差異。而且，當有人想將編輯過的舊檔案上傳到伺服器、覆蓋其他人的最新檔案時，系統會發出警告，因此可以避免在無意中覆蓋他人的編輯內容。</p>
+<h2 id="佈署服務-git"><a href="#佈署服務-git" class="headerlink" title="佈署服務 - git"></a>佈署服務 - git</h2><ol>
+<li>在資料夾路徑搜尋cmd</li>
 </ol>
 <p><img src="https://paper-attachments.dropbox.com/s_828333F7311CC325EADC5FFFBB545086BF783017D2B68027B72BB9B1C9ACCB3A_1578846611395_image.png" alt=""></p>
 <p><img src="https://paper-attachments.dropbox.com/s_828333F7311CC325EADC5FFFBB545086BF783017D2B68027B72BB9B1C9ACCB3A_1578846626312_image.png" alt=""></p>
 <ol start="2">
-<li><p>�ϥβ׺ݩΩR�O�����ε{�ǵn���� Heroku</p>
+<li><p>使用終端或命令行應用程序登錄到 Heroku</p>
 <p> heroku login<br><img src="https://paper-attachments.dropbox.com/s_828333F7311CC325EADC5FFFBB545086BF783017D2B68027B72BB9B1C9ACCB3A_1578846722968_image.png" alt=""></p>
 </li>
 </ol>
 <ol start="3">
-<li><p>�]�w git�W�Ǫ̸��</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;�W�Ǫ̦W��&quot;</span><br><span class="line">git config --global user.email �W�Ǫ̫H�c</span><br></pre></td></tr></table></figure>
-<p>�N1�B2�椤 �W�Ǫ̸�ƴ������ۤv�����</p>
+<li><p>設定 git上傳者資料</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;上傳者名稱&quot;</span><br><span class="line">git config --global user.email 上傳者信箱</span><br></pre></td></tr></table></figure>
+<p>將1、2行中 上傳者資料替換成自己的資料</p>
 </li>
-<li><p>��l�� git</p>
+<li><p>初始化 git</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure>
-<p>�`�N�G�u���Ĥ@������ݭn</p>
+<p>注意：只有第一次執行需要</p>
 </li>
 </ol>
-<p>5.�Ngit�Pheroku�j�w</p>
+<p>5.將git與heroku綁定</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">heroku git:remote -a &#123;HEROKU_APP_NAME&#125;</span><br></pre></td></tr></table></figure>
-<p>�N{ }����J�zHeroku�Ыت�APP�W��</p>
-<p>6.�Q��git�N��Ƽg�J���������Ƥ��A�æP�B��Heroku���ݤW</p>
+<p>將{ }內填入您Heroku創建的APP名稱</p>
+<p>6.利用git將資料寫入版本控制資料中，並同步至Heroku雲端上</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m &quot;create code&quot;</span><br><span class="line">git push -f heroku master</span><br></pre></td></tr></table></figure>
-<p>�`�N�G�H��ݭn�W��code�ܶ��� ���ݭn�Ψ�o�䪺���O<br>“create code” ���Ӵ������Ӧ�������諸�ʧ@</p>
-<h1 id="����"><a href="#����" class="headerlink" title="����"></a><strong>����</strong></h1><p>�q�LLineBot Developer��x��Line@ ID�[�J�ۤv��Line�b���n�ͨöǰe�T������</p>
+<p>注意：以後需要上傳code至雲端 都需要用到這邊的指令<br>“create code” 未來替換成該次版本更改的動作</p>
+<h1 id="測試"><a href="#測試" class="headerlink" title="測試"></a><strong>測試</strong></h1><p>通過LineBot Developer後台裡Line@ ID加入自己的Line帳號好友並傳送訊息給它</p>
 <p><img src="https://paper-attachments.dropbox.com/s_828333F7311CC325EADC5FFFBB545086BF783017D2B68027B72BB9B1C9ACCB3A_1578847681395_image.png" alt=""></p>
-<p>�p�G���|�եت��ǧA���ܡA���ܽd�ҵ{����@���\�F��I</p>
+<p>如果它會白目的學你說話，表示範例程式實作成功了喔！</p>
 
       
     </div>
