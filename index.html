@@ -133,13 +133,13 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-03-18T09:47:20.000Z">2020-03-18</time>
+                <time class="level-item has-text-grey" datetime="2020-03-18T09:47:20.508Z">2020-03-18</time>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    11 分鐘 read (About 1612 words)
+                    11 分鐘 read (About 1580 words)
                 </span>
                 
                 
@@ -218,21 +218,18 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo d -g</span><br></pre></td></tr></table></figure>
 <p>如果正常發布的話，會看到hexo-deployer-git要求登入喔<br><img src="https://i.imgur.com/P6b9fq0.png" alt=""><br><br><font color="#dd0000">注意!! 如果在發布過程中遇到這個錯誤，請在執行一次安裝hexo-deployer-git的指令</font><br><img src="https://i.imgur.com/zNIUWFQ.png" alt=""></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-<h2 id="檢查是否發布成功"><a href="#檢查是否發布成功" class="headerlink" title="檢查是否發布成功"></a>檢查是否發布成功</h2><p>在發布完成後，我們可以透過這串網址，造訪我們的blog。</p>
+<h2 id="檢查是否發布成功"><a href="#檢查是否發布成功" class="headerlink" title="檢查是否發布成功"></a>檢查是否發布成功</h2><p>在發布完成後，我們可以透過這串網址，造訪我們的blog。如下：</p>
 <blockquote>
-<p>https://你的github帳號.github.io/</p>
+<p>https://<del>caseLearner0718</del>.github.io/</p>
 </blockquote>
-<p><img src="https://i.imgur.com/0LoOKW4.png" alt=""></p>
+<p>其中caseLearner0718代換入自己的github帳號，即可造訪自己的Blog。</p>
 <h2 id="yml副檔名"><a href="#yml副檔名" class="headerlink" title="yml副檔名"></a>yml副檔名</h2><p>yml、yaml附檔名屬於YAML資料格式，YAML是一個可讀性高，用來表達資料序列化的格式。YAML參考了其他多種語言，包括：C語言、Python、Perl，並從XML、電子郵件的資料格式（RFC 2822）並從中獲得靈感。。目前已經有數種程式語言或手稿語言支援（或者說解析）這種語言。</p>
 <p>YAML是”YAML Ain’t a Markup Language”（YAML不是一種標記語言）。在開發的這種語言時，YAML 的意思其實是：”Yet Another Markup Language”（仍是一種標記語言），但為了強調這種語言以資料做為中心，而不是以標記語言為重點，而用反向縮略語重新命名。<br>以上資料來自<a href='https://zh.wikipedia.org/wiki/YAML'>YAML-維基百科</a></p>
 <h1 id="發布文章"><a href="#發布文章" class="headerlink" title="發布文章"></a>發布文章</h1><h2 id="創建文章"><a href="#創建文章" class="headerlink" title="創建文章"></a>創建文章</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new [postName]</span><br></pre></td></tr></table></figure>
 <p>新增完後，在source/_post底下，會看到剛剛新創的檔案，將內容直接新增在裡面就可以了。</p>
 <p>推薦MD編輯器：<a href='https://hackmd.io/?nav=overview'>HackMD</a></p>
 <h2 id="刪除文章"><a href="#刪除文章" class="headerlink" title="刪除文章"></a>刪除文章</h2><p>在source/_post底下，會看到所有發布的文章，將文章直接刪除即可。</p>
-<h2 id="亂碼問題"><a href="#亂碼問題" class="headerlink" title="亂碼問題"></a>亂碼問題</h2><p>如果發現內容是亂碼，將檔案儲存為UTF-8編碼。</p>
-<p>window實作方式：<br>用記事本開啟檔案 -&gt; 另存新檔 -&gt; 編碼選擇 “UTF-8”</p>
-<p>編碼更改完成後，執行以下指令，就可以重新佈署!</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean    # 清除快取檔案和已產生的靜態檔案。</span><br><span class="line">$ hexo g        # g &#x3D; generate</span><br><span class="line">$ hexo d        # d &#x3D; deploy</span><br></pre></td></tr></table></figure>
 
 <h1 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h1><p><a href='https://yaoandy107.github.io/hexo-tutorial/#more'>Hexo+GitHub，新手也可以快速建立部落格</a><br><a href='https://hexo.io/zh-cn/'>Hexo 官方文件(含API)</a><br><a href='https://blog.csdn.net/jiluben/article/details/40656935'>解决hexo博客的乱码问题</a></p>
 
@@ -620,7 +617,7 @@ flask</code></pre><p><img src="https://paper-attachments.dropbox.com/s_828333F73
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-18T09:47:20.000Z">2020-03-18</time></div>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-18T09:47:20.508Z">2020-03-18</time></div>
                     <a href="/2020/03/18/Github-Blog/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Github-Blog</a>
                     <p class="is-size-7 is-uppercase">
                         
@@ -715,7 +712,7 @@ flask</code></pre><p><img src="https://paper-attachments.dropbox.com/s_828333F73
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-18T09:47:20.000Z">2020-03-18</time></div>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-18T09:47:20.508Z">2020-03-18</time></div>
                     <a href="/2020/03/18/Github-Blog/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Github-Blog</a>
                     <p class="is-size-7 is-uppercase">
                         
