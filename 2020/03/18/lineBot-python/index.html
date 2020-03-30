@@ -10,16 +10,16 @@
 <title>lineBot_basic - Linus&#39;s Blog</title>
 
 
-    <meta name="description" content="LineBot初心者手冊運作原理 Line透過Webhook的技術與LineBot連接。當User透過Line傳訊息給Line@時，Line@會根據後臺設定的Webhook將訊息透過Post的方式傳給LineBot。 Webhook技術Webhook是讓一個網站與另一個網站通過URL的方式進行”掛勾”。有些人會稱為”訂閱”或是”連接”，主要的意思是讓彼此知道對方的存在。 Webhook應用案例一：">
+    <meta name="description" content="LineBot初心者手冊運作原理 Line透過Webhook的技術與LineBot連接。當User透過Line傳訊息給Line@時，Line@會根據後臺設定的Webhook將訊息透過Post的方式傳給LineBot。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="lineBot_basic">
 <meta property="og:url" content="http://yoursite.com/2020/03/18/lineBot-python/">
 <meta property="og:site_name" content="Linus&#39;s Blog">
-<meta property="og:description" content="LineBot初心者手冊運作原理 Line透過Webhook的技術與LineBot連接。當User透過Line傳訊息給Line@時，Line@會根據後臺設定的Webhook將訊息透過Post的方式傳給LineBot。 Webhook技術Webhook是讓一個網站與另一個網站通過URL的方式進行”掛勾”。有些人會稱為”訂閱”或是”連接”，主要的意思是讓彼此知道對方的存在。 Webhook應用案例一：">
+<meta property="og:description" content="LineBot初心者手冊運作原理 Line透過Webhook的技術與LineBot連接。當User透過Line傳訊息給Line@時，Line@會根據後臺設定的Webhook將訊息透過Post的方式傳給LineBot。">
 <meta property="og:locale" content="zh_TW">
 <meta property="og:image" content="https://i.imgur.com/sZjchSL.jpg">
 <meta property="article:published_time" content="2020-03-18T07:50:50.000Z">
-<meta property="article:modified_time" content="2020-03-30T12:43:34.887Z">
+<meta property="article:modified_time" content="2020-03-30T12:54:31.755Z">
 <meta property="article:author" content="Linus">
 <meta property="article:tag" content="linebot">
 <meta name="twitter:card" content="summary">
@@ -117,12 +117,12 @@
                     
                 
                 
-                <a class="navbar-item is-hidden-tablet catalogue" title="Catálogo" href="javascript:;">
+                <a class="navbar-item is-hidden-tablet catalogue" title="Katalog" href="javascript:;">
                     <i class="fas fa-list-ul"></i>
                 </a>
                 
                 
-                <a class="navbar-item search" title="Buscar" href="javascript:;">
+                <a class="navbar-item search" title="Suche" href="javascript:;">
                     <i class="fas fa-search"></i>
                 </a>
                 
@@ -153,7 +153,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    19 分鐘 leer (Acerca de 2786 palabras)
+                    19 分鐘 lesen (Über 2787 Worte)
                 </span>
                 
                 
@@ -168,6 +168,7 @@
         <div class="content">
             <h1 id="LineBot初心者手冊"><a href="#LineBot初心者手冊" class="headerlink" title="LineBot初心者手冊"></a>LineBot初心者手冊</h1><h2 id="運作原理"><a href="#運作原理" class="headerlink" title="運作原理"></a>運作原理</h2><p><img src="https://paper-attachments.dropbox.com/s_828333F7311CC325EADC5FFFBB545086BF783017D2B68027B72BB9B1C9ACCB3A_1578803234295_image.png" alt="Line@是Line官方帳號"></p>
 <p>Line透過Webhook的技術與LineBot連接。<br>當User透過Line傳訊息給Line@時，Line@會根據後臺設定的Webhook將訊息透過Post的方式傳給LineBot。</p>
+<a id="more"></a>
 <h2 id="Webhook技術"><a href="#Webhook技術" class="headerlink" title="Webhook技術"></a>Webhook技術</h2><p>Webhook是讓一個網站與另一個網站通過URL的方式進行”掛勾”。<br>有些人會稱為”訂閱”或是”連接”，主要的意思是讓彼此知道對方的存在。</p>
 <h2 id="Webhook應用"><a href="#Webhook應用" class="headerlink" title="Webhook應用"></a>Webhook應用</h2><p>案例一：</p>
 <p>家裡有一個煮飯機器人，提供的服務是煮出美味的餐點送給你。<br>當你肚子餓時，就會透過”掛勾”、”訂閱”、”連接”的方式，通知機器人你餓了，而這樣的方式也許是你對著機器人說話或是操作介面，當機器人做好餐點，就送到指定的地方。以這個例子而言：</p>
@@ -318,7 +319,7 @@ flask</code></pre><p><img src="https://paper-attachments.dropbox.com/s_828333F73
 
 <div class="card">
     <div class="card-content">
-        <h3 class="menu-label has-text-centered">Like this article? Support the author with</h3>
+        <h3 class="menu-label has-text-centered">Gefällt Ihnen der Artikel? Unterstützen Sie den Autor mit</h3>
         <div class="buttons is-centered">
             
                 
@@ -408,7 +409,7 @@ flask</code></pre><p><img src="https://paper-attachments.dropbox.com/s_828333F73
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Entradas
+                        Posts
                     </p>
                     <a href="/archives">
                         <p class="title has-text-weight-normal">
@@ -420,7 +421,7 @@ flask</code></pre><p><img src="https://paper-attachments.dropbox.com/s_828333F73
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Categorías
+                        Kategorien
                     </p>
                     <a href="/categories">
                         <p class="title has-text-weight-normal">
@@ -432,7 +433,7 @@ flask</code></pre><p><img src="https://paper-attachments.dropbox.com/s_828333F73
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Etiquetas
+                        Tags
                     </p>
                     <a href="/tags">
                         <p class="title has-text-weight-normal">
@@ -445,7 +446,7 @@ flask</code></pre><p><img src="https://paper-attachments.dropbox.com/s_828333F73
         
         <div class="level">
             <a class="level-item button is-link is-rounded" href="https://github.com/caseLearner0718" target="_blank" rel="noopener">
-                SEGUIR</a>
+                Folgen</a>
         </div>
         
         
@@ -498,7 +499,7 @@ flask</code></pre><p><img src="https://paper-attachments.dropbox.com/s_828333F73
         <div class="card-content">
             <div class="menu">
                 <h3 class="menu-label">
-                    Catálogo
+                    Katalog
                 </h3>
                 <ul class="menu-list"><li>
         <a class="is-flex" href="#LineBot初心者手冊">
@@ -594,7 +595,7 @@ flask</code></pre><p><img src="https://paper-attachments.dropbox.com/s_828333F73
     <div class="card-content">
         <div class="menu">
         <h3 class="menu-label">
-            Enlaces
+            Links
         </h3>
         <ul class="menu-list">
         
@@ -642,7 +643,7 @@ flask</code></pre><p><img src="https://paper-attachments.dropbox.com/s_828333F73
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Categorías
+                Kategorien
             </h3>
             <ul class="menu-list">
             
@@ -654,7 +655,7 @@ flask</code></pre><p><img src="https://paper-attachments.dropbox.com/s_828333F73
         <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            Nube de etiquetas
+            Tag Cloud
         </h3>
         <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/linebot/" style="font-size: 10px;">linebot</a>
     </div>
@@ -666,7 +667,7 @@ flask</code></pre><p><img src="https://paper-attachments.dropbox.com/s_828333F73
             <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            Recientes
+            Letzte Einträge
         </h3>
         
         <article class="media">
@@ -714,7 +715,7 @@ flask</code></pre><p><img src="https://paper-attachments.dropbox.com/s_828333F73
     <div class="card-content">
         <div class="menu">
         <h3 class="menu-label">
-            Archivos
+            Archive
         </h3>
         <ul class="menu-list">
         
@@ -738,7 +739,7 @@ flask</code></pre><p><img src="https://paper-attachments.dropbox.com/s_828333F73
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Etiquetas
+                Tags
             </h3>
             <div class="field is-grouped is-grouped-multiline">
                 
@@ -775,7 +776,7 @@ flask</code></pre><p><img src="https://paper-attachments.dropbox.com/s_828333F73
         <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            Recientes
+            Letzte Einträge
         </h3>
         
         <article class="media">
@@ -823,7 +824,7 @@ flask</code></pre><p><img src="https://paper-attachments.dropbox.com/s_828333F73
     <div class="card-content">
         <div class="menu">
         <h3 class="menu-label">
-            Archivos
+            Archive
         </h3>
         <ul class="menu-list">
         
@@ -847,7 +848,7 @@ flask</code></pre><p><img src="https://paper-attachments.dropbox.com/s_828333F73
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Etiquetas
+                Tags
             </h3>
             <div class="field is-grouped is-grouped-multiline">
                 
@@ -989,7 +990,7 @@ document.addEventListener('DOMContentLoaded', function () {
 </script>
 
 
-<a id="back-to-top" title="Back to Top" href="javascript:;">
+<a id="back-to-top" title="Zurück nach oben" href="javascript:;">
     <i class="fas fa-chevron-up"></i>
 </a>
 <script src="/js/back-to-top.js" defer></script>
@@ -1013,7 +1014,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <div class="searchbox ins-search">
     <div class="searchbox-container ins-search-container">
         <div class="searchbox-input-wrapper">
-            <input type="text" class="searchbox-input ins-search-input" placeholder="Teclea algo..." />
+            <input type="text" class="searchbox-input ins-search-input" placeholder="Tippen Sie etwas..." />
             <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="searchbox-result-wrapper ins-section-wrapper">
@@ -1025,11 +1026,11 @@ document.addEventListener('DOMContentLoaded', function () {
     (function (window) {
         var INSIGHT_CONFIG = {
             TRANSLATION: {
-                POSTS: 'Entradas',
-                PAGES: 'Páginas',
-                CATEGORIES: 'Categorías',
-                TAGS: 'Etiquetas',
-                UNTITLED: '(Sin título)',
+                POSTS: 'Posts',
+                PAGES: 'Seiten',
+                CATEGORIES: 'Kategorien',
+                TAGS: 'Tags',
+                UNTITLED: '(Unbenannt)',
             },
             CONTENT_URL: '/content.json',
         };

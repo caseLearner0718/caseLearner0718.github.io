@@ -113,7 +113,7 @@
                 
                 
                 
-                <a class="navbar-item search" title="Buscar" href="javascript:;">
+                <a class="navbar-item search" title="Suche" href="javascript:;">
                     <i class="fas fa-search"></i>
                 </a>
                 
@@ -145,7 +145,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    11 分鐘 leer (Acerca de 1580 palabras)
+                    11 分鐘 lesen (Über 1581 Worte)
                 </span>
                 
                 
@@ -173,74 +173,16 @@
 <li>Hexo</li>
 <li>github帳號</li>
 </ol>
-<h2 id="Node-js"><a href="#Node-js" class="headerlink" title="Node.js"></a>Node.js</h2><p><img src="https://i.imgur.com/M9hdv8E.png" alt=""></p>
-<ol>
-<li><a href='https://tw.alphacamp.co/blog/node-js-and-javascript'>認識Node.js</a></li>
-<li><a href='https://nodejs.org/zh-tw/download/'>安裝Node.js</a></li>
-</ol>
-<h2 id="git"><a href="#git" class="headerlink" title="git"></a>git</h2><p><img src="https://i.imgur.com/TiT7c89.png" alt=""></p>
-<ol>
-<li><a href='https://gitbook.tw/chapters/introduction/what-is-git.html'>認識git</a></li>
-<li><a href='https://kknews.cc/zh-tw/code/n3e8l8g.html'>git與github的關係</a></li>
-<li><a href='https://git-scm.com/downloads'>安裝git</a><br>(如果原本有開著command line，安裝完git後需要重啟command line，環境變數才會寫入)</li>
-</ol>
-<p>通過檢查版本，來驗證是否安裝成功</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git --version</span><br></pre></td></tr></table></figure>
-
-<h2 id="Github"><a href="#Github" class="headerlink" title="Github"></a>Github</h2><p>登入<a href='https://github.com/'>github</a><br>找到右上角選單中Your repositaries (儲存庫)<br><img src="https://i.imgur.com/0CE9wpL.png" alt=""><br>新增一個Repository<br><img src="https://i.imgur.com/W7orlUs.png" alt=""><br>命名為你的帳號名稱<br><img src="https://i.imgur.com/QjeIrNU.png" alt=""><br>看到這個畫面就是創建成功了喔!<br><img src="https://i.imgur.com/QU3qwPP.png" alt=""></p>
-<h2 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h2><p>Hexo是一個快速、簡單且高效的Blog框架，我們可以使用node.js快速布置它。<br>它可以使非web開發人員，須要自己的Blog時，省去很多時間，並專注於內容的編寫。<br>Hexo產生出來的Blog支援MarkDown語法，並可以建置在github空間上!實在非常方便。</p>
-<p><a href='https://hexo.io/zh-cn/'>中文API</a></p>
-<h2 id="安裝Hexo-git"><a href="#安裝Hexo-git" class="headerlink" title="安裝Hexo-git"></a>安裝Hexo-git</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-
-<h2 id="安裝Hexo"><a href="#安裝Hexo" class="headerlink" title="安裝Hexo"></a>安裝Hexo</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
-<p>通過檢查版本，來驗證是否安裝成功</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo version</span><br></pre></td></tr></table></figure>
-
-<h1 id="實作"><a href="#實作" class="headerlink" title="實作"></a>實作</h1><h2 id="建構blog的架構"><a href="#建構blog的架構" class="headerlink" title="建構blog的架構"></a>建構blog的架構</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init blog    #建構blog架構</span><br><span class="line">$ cd blog           #進入剛剛hexo建構的資料夾中</span><br><span class="line">$ npm install       #通過npm幫我們安裝、紀錄hexo建構的架構中 所需的套件</span><br></pre></td></tr></table></figure>
-<p>建構完成後，blog目錄結構如下：</p>
-<blockquote>
-<p>.<br>├── _config.yml<br>├── package.json<br>├── scaffolds<br>├── source<br>│   ├── _drafts<br>│   └── _posts<br>└── themes</p>
-</blockquote>
-<p>延伸閱讀：<a href='https://ithelp.ithome.com.tw/articles/10191783'>npm install做了什麼</a></p>
-<h3 id="config-yml"><a href="#config-yml" class="headerlink" title="_config.yml"></a>_config.yml</h3><p>網站的<a href='https://hexo.io/zh-cn/docs/setup#config-yml'>設定</a>信息，可以在此設定大部分的參數。</p>
-<h3 id="package-json"><a href="#package-json" class="headerlink" title="package.json"></a>package.json</h3><p>網站的資本資料、套件名稱紀錄。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">package.json</span><br><span class="line">&#123;</span><br><span class="line">  &quot;name&quot;: &quot;hexo-site&quot;,</span><br><span class="line">  &quot;version&quot;: &quot;0.0.0&quot;,</span><br><span class="line">  &quot;private&quot;: true,</span><br><span class="line">  &quot;hexo&quot;: &#123;</span><br><span class="line">    &quot;version&quot;: &quot;&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;dependencies&quot;: &#123;</span><br><span class="line">    &quot;hexo&quot;: &quot;^3.8.0&quot;,</span><br><span class="line">    &quot;hexo-generator-archive&quot;: &quot;^0.1.5&quot;,</span><br><span class="line">    &quot;hexo-generator-category&quot;: &quot;^0.1.3&quot;,</span><br><span class="line">    &quot;hexo-generator-index&quot;: &quot;^0.2.1&quot;,</span><br><span class="line">    &quot;hexo-generator-tag&quot;: &quot;^0.2.0&quot;,</span><br><span class="line">    &quot;hexo-renderer-ejs&quot;: &quot;^0.3.1&quot;,</span><br><span class="line">    &quot;hexo-renderer-stylus&quot;: &quot;^0.3.3&quot;,</span><br><span class="line">    &quot;hexo-renderer-marked&quot;: &quot;^0.3.2&quot;,</span><br><span class="line">    &quot;hexo-server&quot;: &quot;^0.3.3&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="scaffolds"><a href="#scaffolds" class="headerlink" title="scaffolds"></a>scaffolds</h3><p><a href='https://hexo.io/zh-cn/docs/writing'>模版</a>文件夹。當發布新文章時，Hexo 會根據 scaffold 來建立文件。</p>
-<h3 id="source"><a href="#source" class="headerlink" title="source"></a>source</h3><p>資源文件夾是存放用户資源的地方。除 _posts 文件夹之外，開頭命名為 _ (下滑線)的文件 / 文件夹和隐藏的文件将会被忽略。Markdown 和 HTML 文件会被解析并放到 public 文件夹，而其他文件会被拷贝过去。</p>
-<h3 id="themes"><a href="#themes" class="headerlink" title="themes"></a>themes</h3><p><a href='https://hexo.io/zh-cn/docs/themes'>主题</a> 文件夹。Hexo 會根据主題來生成静態頁面。</p>
-<h2 id="設定blog-config"><a href="#設定blog-config" class="headerlink" title="設定blog config"></a>設定blog config</h2><p>接著，我們需要發布我們的blog到Github repository!<br><img src="https://i.imgur.com/kXLw9ZD.png" alt=""></p>
-<p>在blog資料夾底下，可以發現一隻檔案名叫<b>config.yml</b>，OS為windows的朋友，可以用記事本開啟它。<br><img src="https://i.imgur.com/Kd1j4Xg.png" alt=""><br>在第一行，它告訴我們，它是一隻Hexo套件的設定檔，接著拉到檔案的最下方。可以找到：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># Deployment</span><br><span class="line">## Docs: https:&#x2F;&#x2F;hexo.io&#x2F;docs&#x2F;deployment.html</span><br><span class="line">deploy:</span><br><span class="line">  type:</span><br></pre></td></tr></table></figure>
-<p>將設定發布的這部分改為：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># Deployment</span><br><span class="line">## Docs: https:&#x2F;&#x2F;hexo.io&#x2F;docs&#x2F;deployment.html</span><br><span class="line">deploy:</span><br><span class="line">type: git</span><br><span class="line">  repository: 你的github repository網址</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
-<p><font color="#dd0000">注意!! 在每個設定項後面，<b>必須空一格</b>，例：type: git</font><br>網址可以在這個介面中找到<br><img src="https://i.imgur.com/npaD3dq.png" alt=""><br>編輯完設定檔後，我們就可以準備發布服務了喔!</p>
-<h2 id="本地端運行、發布服務"><a href="#本地端運行、發布服務" class="headerlink" title="本地端運行、發布服務"></a>本地端運行、發布服務</h2><p>在發布服務之前，我們可以先透過hexo將網站伺服器建立起來，並先檢查有沒有錯誤。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>本地端server運行後，連上本地端，先看看發布後的結果。</p>
-<blockquote>
-<p><a href="http://localhost:4000">http://localhost:4000</a></p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo d -g</span><br></pre></td></tr></table></figure>
-<p>如果正常發布的話，會看到hexo-deployer-git要求登入喔<br><img src="https://i.imgur.com/P6b9fq0.png" alt=""><br><br><font color="#dd0000">注意!! 如果在發布過程中遇到這個錯誤，請在執行一次安裝hexo-deployer-git的指令</font><br><img src="https://i.imgur.com/zNIUWFQ.png" alt=""></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-<h2 id="檢查是否發布成功"><a href="#檢查是否發布成功" class="headerlink" title="檢查是否發布成功"></a>檢查是否發布成功</h2><p>在發布完成後，我們可以透過這串網址，造訪我們的blog。如下：</p>
-<blockquote>
-<p>https://<del>caseLearner0718</del>.github.io/</p>
-</blockquote>
-<p>其中caseLearner0718代換入自己的github帳號，即可造訪自己的Blog。</p>
-<h2 id="yml副檔名"><a href="#yml副檔名" class="headerlink" title="yml副檔名"></a>yml副檔名</h2><p>yml、yaml附檔名屬於YAML資料格式，YAML是一個可讀性高，用來表達資料序列化的格式。YAML參考了其他多種語言，包括：C語言、Python、Perl，並從XML、電子郵件的資料格式（RFC 2822）並從中獲得靈感。。目前已經有數種程式語言或手稿語言支援（或者說解析）這種語言。</p>
-<p>YAML是”YAML Ain’t a Markup Language”（YAML不是一種標記語言）。在開發的這種語言時，YAML 的意思其實是：”Yet Another Markup Language”（仍是一種標記語言），但為了強調這種語言以資料做為中心，而不是以標記語言為重點，而用反向縮略語重新命名。<br>以上資料來自<a href='https://zh.wikipedia.org/wiki/YAML'>YAML-維基百科</a></p>
-<h1 id="發布文章"><a href="#發布文章" class="headerlink" title="發布文章"></a>發布文章</h1><h2 id="創建文章"><a href="#創建文章" class="headerlink" title="創建文章"></a>創建文章</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new [postName]</span><br></pre></td></tr></table></figure>
-<p>新增完後，在source/_post底下，會看到剛剛新創的檔案，將內容直接新增在裡面就可以了。</p>
-<p>推薦MD編輯器：<a href='https://hackmd.io/?nav=overview'>HackMD</a></p>
-<h2 id="刪除文章"><a href="#刪除文章" class="headerlink" title="刪除文章"></a>刪除文章</h2><p>在source/_post底下，會看到所有發布的文章，將文章直接刪除即可。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean    # 清除快取檔案和已產生的靜態檔案。</span><br><span class="line">$ hexo g        # g &#x3D; generate</span><br><span class="line">$ hexo d        # d &#x3D; deploy</span><br></pre></td></tr></table></figure>
-
-<h1 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h1><p><a href='https://yaoandy107.github.io/hexo-tutorial/#more'>Hexo+GitHub，新手也可以快速建立部落格</a><br><a href='https://hexo.io/zh-cn/'>Hexo 官方文件(含API)</a><br><a href='https://blog.csdn.net/jiluben/article/details/40656935'>解决hexo博客的乱码问题</a></p>
-
         </div>
         
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2020/03/18/Github-Blog/#more">Mehr lesen</a>
+                </div>
+            </div>
+        </div>
         
         
     </div>
@@ -272,7 +214,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    19 分鐘 leer (Acerca de 2786 palabras)
+                    19 分鐘 lesen (Über 2787 Worte)
                 </span>
                 
                 
@@ -287,138 +229,16 @@
         <div class="content">
             <h1 id="LineBot初心者手冊"><a href="#LineBot初心者手冊" class="headerlink" title="LineBot初心者手冊"></a>LineBot初心者手冊</h1><h2 id="運作原理"><a href="#運作原理" class="headerlink" title="運作原理"></a>運作原理</h2><p><img src="https://paper-attachments.dropbox.com/s_828333F7311CC325EADC5FFFBB545086BF783017D2B68027B72BB9B1C9ACCB3A_1578803234295_image.png" alt="Line@是Line官方帳號"></p>
 <p>Line透過Webhook的技術與LineBot連接。<br>當User透過Line傳訊息給Line@時，Line@會根據後臺設定的Webhook將訊息透過Post的方式傳給LineBot。</p>
-<h2 id="Webhook技術"><a href="#Webhook技術" class="headerlink" title="Webhook技術"></a>Webhook技術</h2><p>Webhook是讓一個網站與另一個網站通過URL的方式進行”掛勾”。<br>有些人會稱為”訂閱”或是”連接”，主要的意思是讓彼此知道對方的存在。</p>
-<h2 id="Webhook應用"><a href="#Webhook應用" class="headerlink" title="Webhook應用"></a>Webhook應用</h2><p>案例一：</p>
-<p>家裡有一個煮飯機器人，提供的服務是煮出美味的餐點送給你。<br>當你肚子餓時，就會透過”掛勾”、”訂閱”、”連接”的方式，通知機器人你餓了，而這樣的方式也許是你對著機器人說話或是操作介面，當機器人做好餐點，就送到指定的地方。以這個例子而言：</p>
-<ul>
-<li>訂閱者：你</li>
-<li>服務提供者：機器人</li>
-<li>動作：送餐至餐桌</li>
-</ul>
-<p>案例二：</p>
-<p>有個網站提供氣象預報資訊，可以定時傳送氣象資訊給用戶。<br>然而與煮飯機器人不同的是，網站要怎麼做出定位，知道用戶在哪裡呢?<br>這時Webhook的技術就解決了這個問題。</p>
-<ul>
-<li>訂閱者：用戶</li>
-<li>服務提供者：網站</li>
-<li>動作：傳送資料返回用戶</li>
-</ul>
-<p>那麼氣象網站怎麼知道用戶在哪裡呢，與煮飯機器人不同，煮飯機器人設置在家中，動作執行時只需要把餐點放置餐桌，氣象網站需要知道資訊需要返回至哪邊。當使用者透過Webhook連接時，氣象網站可以透過封包的來源IP，知道它應該要返回資料給誰。</p>
-<h2 id="常見實現Webhook的方法"><a href="#常見實現Webhook的方法" class="headerlink" title="常見實現Webhook的方法"></a>常見實現Webhook的方法</h2><ul>
-<li>Heroku</li>
-<li>ngrok<h2 id="Heroku介紹"><a href="#Heroku介紹" class="headerlink" title="Heroku介紹"></a>Heroku介紹</h2></li>
-</ul>
-<p>Heroku是一個支援多種程式語言的雲平台即服務。在2010年被Salesforce.com收購。Heroku作為最元祖的雲平台之一，從2007年6月起開發，當時它僅支援Ruby，但後來增加了對Java、Node.js、Scala、Clojure、Python以及PHP和Perl的支援。<br>收費方面，Heroku採用方案收費，通過租用不同的Dyno、資料庫，會有不同的收費機制，不過對於實現我們的LineBot，免費的Dyno即可。 Dyno是Heroku自訂的硬體容器單位，一個Dyno可以讓一個應用程式執行。</p>
-<p><img src="https://paper-attachments.dropbox.com/s_828333F7311CC325EADC5FFFBB545086BF783017D2B68027B72BB9B1C9ACCB3A_1578808728031_image.png" alt="https://www.heroku.com/pricing"></p>
-<h2 id="Ngrok介紹"><a href="#Ngrok介紹" class="headerlink" title="Ngrok介紹"></a>Ngrok介紹</h2><p>Ngrok是環境建置工具，用於通過任何NAT或防火牆向本地主機提供即時安全的URL。讓開發者通過簡單的操作就能實現Webhook的技術，簡化開發者的工作。<br>收費方面，Ngrok採用方案收費，差別在於提供不同的功能，雖然要開發LineBot時，免費的方案即可。但是對於正式使用時，免費的方案會使機器每次重開時，重製URL，導致Line@與LineBot沒辦法順利連接。</p>
-<p><img src="https://paper-attachments.dropbox.com/s_828333F7311CC325EADC5FFFBB545086BF783017D2B68027B72BB9B1C9ACCB3A_1578808662604_image.png" alt="https://ngrok.com/pricing"></p>
-<h1 id="環境建置"><a href="#環境建置" class="headerlink" title="環境建置"></a><strong>環境建置</strong></h1><p>在開始前你需要具備</p>
-<ul>
-<li>Heroku 帳號</li>
-<li>Line 帳號</li>
-</ul>
-<h2 id="建置Heroku環境"><a href="#建置Heroku環境" class="headerlink" title="建置Heroku環境"></a><strong>建置Heroku環境</strong></h2><p>1.登入<a href="https://www.heroku.com/">Heroku</a><br>右上角有個New → create new app</p>
-<p><img src="https://paper-attachments.dropbox.com/s_828333F7311CC325EADC5FFFBB545086BF783017D2B68027B72BB9B1C9ACCB3A_1578826730823_image.png" alt=""></p>
-<p>2.輸入APP名稱</p>
-<p><img src="https://paper-attachments.dropbox.com/s_828333F7311CC325EADC5FFFBB545086BF783017D2B68027B72BB9B1C9ACCB3A_1578826990319_image.png" alt=""></p>
-<p>3.檢視</p>
-<p><img src="https://paper-attachments.dropbox.com/s_828333F7311CC325EADC5FFFBB545086BF783017D2B68027B72BB9B1C9ACCB3A_1578827696634_image.png" alt=""></p>
-<pre><code>創建完APP後，可以從面板上Overview看到目前執行這個APP的資源是空的，不過沒關係，之後我們在慢慢完整它。目前只要知道Heroku上分為哪種資源。</code></pre><h2 id="Heroku資源介紹"><a href="#Heroku資源介紹" class="headerlink" title="Heroku資源介紹"></a>Heroku資源介紹</h2><p>Heroku的硬體資源分為兩種</p>
-<ul>
-<li>Add-ons</li>
-<li>Dyno</li>
-</ul>
-<p>Add-ons 是提供資料庫、資料備源、水平擴展、程序監控…各種開發工具的資源。</p>
-<p><img src="https://paper-attachments.dropbox.com/s_828333F7311CC325EADC5FFFBB545086BF783017D2B68027B72BB9B1C9ACCB3A_1578829991039_image.png" alt=""></p>
-<p>Dyno是一項Heroku定義的硬體容器，一個應用程序在Heroku上執行需要一個Dyno，而我們在雲端空間上，也必須要有一個檔案指定這項APP中，需要幾個Dyno。並且在後台設定每個Dyno的付費方案。</p>
-<p><img src="https://paper-attachments.dropbox.com/s_828333F7311CC325EADC5FFFBB545086BF783017D2B68027B72BB9B1C9ACCB3A_1578830306384_image.png" alt=""></p>
-<h2 id="Line-、Line-Developer環境建置"><a href="#Line-、Line-Developer環境建置" class="headerlink" title="Line@、Line Developer環境建置"></a>Line@、Line Developer環境建置</h2><ol>
-<li>登入<a href="https://developers.line.biz/zh-hant/">Line Debelopers</a><br>創建提供者</li>
-</ol>
-<p><img src="https://paper-attachments.dropbox.com/s_828333F7311CC325EADC5FFFBB545086BF783017D2B68027B72BB9B1C9ACCB3A_1578831233237_image.png" alt="暱稱即可"></p>
-<ol start="2">
-<li>創建Message API channel</li>
-</ol>
-<p><img src="https://paper-attachments.dropbox.com/s_828333F7311CC325EADC5FFFBB545086BF783017D2B68027B72BB9B1C9ACCB3A_1578831508333_image.png" alt=""></p>
-<p><img src="https://paper-attachments.dropbox.com/s_828333F7311CC325EADC5FFFBB545086BF783017D2B68027B72BB9B1C9ACCB3A_1578832353754_image.png" alt="注意：channel name7天內不能變更"></p>
-<h2 id="Line-重要基本資料"><a href="#Line-重要基本資料" class="headerlink" title="Line@重要基本資料"></a>Line@重要基本資料</h2><p>創建完成後 瀏覽基本資料可以看見幾項比較重要的資料</p>
-<p><img src="https://paper-attachments.dropbox.com/s_828333F7311CC325EADC5FFFBB545086BF783017D2B68027B72BB9B1C9ACCB3A_1578832821141_image.png" alt=""></p>
-<ul>
-<li>Channel secret<br><img src="https://paper-attachments.dropbox.com/s_828333F7311CC325EADC5FFFBB545086BF783017D2B68027B72BB9B1C9ACCB3A_1578832940988_image.png" alt=""><br><img src="https://paper-attachments.dropbox.com/s_828333F7311CC325EADC5FFFBB545086BF783017D2B68027B72BB9B1C9ACCB3A_1578833183142_image.png" alt=""></li>
-</ul>
-<p>相當於LineBot控制Line@時，需要的密碼。<br>如果不幸外流了，可以在通過Issue按鈕重新發行。<br>注意：1小時只能發行一次</p>
-<ul>
-<li>User ID<br><img src="https://paper-attachments.dropbox.com/s_828333F7311CC325EADC5FFFBB545086BF783017D2B68027B72BB9B1C9ACCB3A_1578833015213_image.png" alt=""></li>
-</ul>
-<p>這是創建者的Line帳號ID，開發測試時，可以透過自己的Line ID傳訊給自己。</p>
-<p><img src="https://paper-attachments.dropbox.com/s_828333F7311CC325EADC5FFFBB545086BF783017D2B68027B72BB9B1C9ACCB3A_1578832837664_image.png" alt=""></p>
-<ul>
-<li>Channel access token<br><img src="https://paper-attachments.dropbox.com/s_828333F7311CC325EADC5FFFBB545086BF783017D2B68027B72BB9B1C9ACCB3A_1578845002719_image.png" alt=""></li>
-</ul>
-<p>使用此通道訪問令牌來調用Messaging API。<br>這個長期存在的令牌不會過期。要發行新令牌或替換現有令牌，請單擊”Reissue”發行。</p>
-<ul>
-<li>Line@ ID、QR code<br><img src="https://paper-attachments.dropbox.com/s_828333F7311CC325EADC5FFFBB545086BF783017D2B68027B72BB9B1C9ACCB3A_1578832852229_image.png" alt=""></li>
-</ul>
-<p>通過ID、QR code，測試時加自己的Line@好友測試。</p>
-<ul>
-<li>Webhook 設定<br><img src="https://paper-attachments.dropbox.com/s_828333F7311CC325EADC5FFFBB545086BF783017D2B68027B72BB9B1C9ACCB3A_1578832872964_image.png" alt=""></li>
-</ul>
-<p>Use Webhook一定要開啟，訊息才能轉傳給LineBot<br>Webhook URL</p>
-<pre><code>https://你的APP名稱.herokuapp.com/callback</code></pre><h1 id="LineBot實作"><a href="#LineBot實作" class="headerlink" title="LineBot實作"></a>LineBot實作</h1><p>在運作原理中，我們提到Line@與LineBot的連接靠Webhook技術。那具體來說，我們要怎麼實現呢?</p>
-<h2 id="app-py"><a href="#app-py" class="headerlink" title="app.py"></a>app.py</h2><p>創建一個workSpace資料夾，並透過編輯器撰寫一隻app.py範例程式</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask, request, abort</span><br><span class="line">    </span><br><span class="line"><span class="keyword">from</span> linebot <span class="keyword">import</span> (</span><br><span class="line">    LineBotApi, WebhookHandler</span><br><span class="line">)</span><br><span class="line"><span class="keyword">from</span> linebot.exceptions <span class="keyword">import</span> (</span><br><span class="line">    InvalidSignatureError</span><br><span class="line">)</span><br><span class="line"><span class="keyword">from</span> linebot.models <span class="keyword">import</span> (</span><br><span class="line">    MessageEvent, TextMessage, TextSendMessage,</span><br><span class="line">)</span><br><span class="line">    </span><br><span class="line">app = Flask(__name__)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Channel Access Token</span></span><br><span class="line">line_bot_api = LineBotApi(<span class="string">'YOUR_CHANNEL_ACCESS_TOKEN'</span>)</span><br><span class="line">    </span><br><span class="line"><span class="comment"># Channel Secret</span></span><br><span class="line">handler = WebhookHandler(<span class="string">'YOUR_CHANNEL_SECRET'</span>)</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line"><span class="meta">@app.route("/callback", methods=['POST'])</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">callback</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="comment"># get X-Line-Signature header value</span></span><br><span class="line">    signature = request.headers[<span class="string">'X-Line-Signature'</span>]</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># get request body as text</span></span><br><span class="line">    body = request.get_data(as_text=<span class="literal">True</span>)</span><br><span class="line">    app.logger.info(<span class="string">"Request body: "</span> + body)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># handle webhook body</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        handler.handle(body, signature)</span><br><span class="line">        <span class="keyword">except</span> InvalidSignatureError:</span><br><span class="line">        print(<span class="string">"Invalid signature. Please check your channel access token/channel secret."</span>)</span><br><span class="line">        abort(<span class="number">400</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="string">'OK'</span></span><br><span class="line"></span><br><span class="line">    </span><br><span class="line"><span class="meta">@handler.add(MessageEvent, message=TextMessage)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">handle_message</span><span class="params">(event)</span>:</span></span><br><span class="line">    line_bot_api.reply_message(</span><br><span class="line">        event.reply_token,</span><br><span class="line">        TextSendMessage(text=event.message.text))</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    app.run()</span><br></pre></td></tr></table></figure>
-<p>將這兩項資料 根據Line Developer後台的資料替換</p>
-<ul>
-<li>Channel access token (16行)</li>
-<li>Channel secret (19行)</li>
-</ul>
-<h2 id="Procfile"><a href="#Procfile" class="headerlink" title="Procfile"></a>Procfile</h2><p>Procfile是Heroku上定義app裡有哪些服務的檔案，並且通過這個檔案分配Dyno<br>注意：如果沒有上傳Procfile的話，app.py是不會有Dyno執行它的</p>
-<p>創建一個Procfile.txt</p>
-<p><img src="https://paper-attachments.dropbox.com/s_828333F7311CC325EADC5FFFBB545086BF783017D2B68027B72BB9B1C9ACCB3A_1578845599132_image.png" alt="Windows系統先創建txt檔，linux系統的話 可以直接建立檔案就好"></p>
-<pre><code>web: python app.py</code></pre><p><img src="https://paper-attachments.dropbox.com/s_828333F7311CC325EADC5FFFBB545086BF783017D2B68027B72BB9B1C9ACCB3A_1578845660165_image.png" alt="編輯完檔案後 再刪除附檔名"></p>
-<p>如果您的文件資料夾裡沒有顯示副檔名，可以通過上方檢視-&gt;副檔名(打勾) 設定</p>
-<p><img src="https://paper-attachments.dropbox.com/s_828333F7311CC325EADC5FFFBB545086BF783017D2B68027B72BB9B1C9ACCB3A_1578845843942_image.png" alt=""></p>
-<h2 id="requirements-txt"><a href="#requirements-txt" class="headerlink" title="requirements.txt"></a>requirements.txt</h2><p>requirements.txt用於紀錄專案所需安裝的套件名稱，是Heroku上建置環境的好夥伴，有了它我們上傳lineBot後，Heroku會根據裡面的內容，安裝我們的服務所需的套件。</p>
-<pre><code>line-bot-sdk
-flask</code></pre><p><img src="https://paper-attachments.dropbox.com/s_828333F7311CC325EADC5FFFBB545086BF783017D2B68027B72BB9B1C9ACCB3A_1578910434536_image.png" alt="佈署前 我們的檔案目錄"></p>
-<h1 id="佈署服務"><a href="#佈署服務" class="headerlink" title="佈署服務"></a><strong>佈署服務</strong></h1><p>您需要先安裝：</p>
-<ul>
-<li><a href="https://devcenter.heroku.com/articles/heroku-cli">Heroku CLI</a></li>
-<li><a href="https://git-scm.com/">Git</a></li>
-</ul>
-<h2 id="Heroku-CLI"><a href="#Heroku-CLI" class="headerlink" title="Heroku CLI"></a>Heroku CLI</h2><p>Heroku命令行界面（CLI）使得直接從終端輕鬆創建和管理Heroku應用程序變得容易。這是使用Heroku的必要部分。</p>
-<h2 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h2><p>Heroku佈屬服務的指定工具。<br>Git為分散式版本控制系統，是為了更好管理Linux內核而開發的。可以把檔案的狀態作為更新歷史記錄保存起來。因此可以把編輯過的檔案復原到以前的狀態，也可以顯示編輯過內容的差異。而且，當有人想將編輯過的舊檔案上傳到伺服器、覆蓋其他人的最新檔案時，系統會發出警告，因此可以避免在無意中覆蓋他人的編輯內容。</p>
-<h2 id="佈署服務-git"><a href="#佈署服務-git" class="headerlink" title="佈署服務 - git"></a>佈署服務 - git</h2><ol>
-<li>在資料夾路徑搜尋cmd</li>
-</ol>
-<p><img src="https://paper-attachments.dropbox.com/s_828333F7311CC325EADC5FFFBB545086BF783017D2B68027B72BB9B1C9ACCB3A_1578846611395_image.png" alt=""></p>
-<p><img src="https://paper-attachments.dropbox.com/s_828333F7311CC325EADC5FFFBB545086BF783017D2B68027B72BB9B1C9ACCB3A_1578846626312_image.png" alt=""></p>
-<ol start="2">
-<li><p>使用終端或命令行應用程序登錄到 Heroku</p>
-<p> heroku login<br><img src="https://paper-attachments.dropbox.com/s_828333F7311CC325EADC5FFFBB545086BF783017D2B68027B72BB9B1C9ACCB3A_1578846722968_image.png" alt=""></p>
-</li>
-</ol>
-<ol start="3">
-<li><p>設定 git上傳者資料</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;上傳者名稱&quot;</span><br><span class="line">git config --global user.email 上傳者信箱</span><br></pre></td></tr></table></figure>
-<p>將1、2行中 上傳者資料替換成自己的資料</p>
-</li>
-<li><p>初始化 git</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure>
-<p>注意：只有第一次執行需要</p>
-</li>
-</ol>
-<p>5.將git與heroku綁定</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">heroku git:remote -a &#123;HEROKU_APP_NAME&#125;</span><br></pre></td></tr></table></figure>
-<p>將{ }內填入您Heroku創建的APP名稱</p>
-<p>6.利用git將資料寫入版本控制資料中，並同步至Heroku雲端上</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m &quot;create code&quot;</span><br><span class="line">git push -f heroku master</span><br></pre></td></tr></table></figure>
-<p>注意：以後需要上傳code至雲端 都需要用到這邊的指令<br>“create code” 未來替換成該次版本更改的動作</p>
-<h1 id="測試"><a href="#測試" class="headerlink" title="測試"></a><strong>測試</strong></h1><p>通過LineBot Developer後台裡Line@ ID加入自己的Line帳號好友並傳送訊息給它</p>
-<p><img src="https://paper-attachments.dropbox.com/s_828333F7311CC325EADC5FFFBB545086BF783017D2B68027B72BB9B1C9ACCB3A_1578847681395_image.png" alt=""></p>
-<p>如果它會白目的學你說話，表示範例程式實作成功了喔！</p>
-
         </div>
         
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2020/03/18/lineBot-python/#more">Mehr lesen</a>
+                </div>
+            </div>
+        </div>
         
         
     </div>
@@ -472,7 +292,7 @@ flask</code></pre><p><img src="https://paper-attachments.dropbox.com/s_828333F73
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Entradas
+                        Posts
                     </p>
                     <a href="/archives">
                         <p class="title has-text-weight-normal">
@@ -484,7 +304,7 @@ flask</code></pre><p><img src="https://paper-attachments.dropbox.com/s_828333F73
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Categorías
+                        Kategorien
                     </p>
                     <a href="/categories">
                         <p class="title has-text-weight-normal">
@@ -496,7 +316,7 @@ flask</code></pre><p><img src="https://paper-attachments.dropbox.com/s_828333F73
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Etiquetas
+                        Tags
                     </p>
                     <a href="/tags">
                         <p class="title has-text-weight-normal">
@@ -509,7 +329,7 @@ flask</code></pre><p><img src="https://paper-attachments.dropbox.com/s_828333F73
         
         <div class="level">
             <a class="level-item button is-link is-rounded" href="https://github.com/caseLearner0718" target="_blank" rel="noopener">
-                SEGUIR</a>
+                Folgen</a>
         </div>
         
         
@@ -562,7 +382,7 @@ flask</code></pre><p><img src="https://paper-attachments.dropbox.com/s_828333F73
     <div class="card-content">
         <div class="menu">
         <h3 class="menu-label">
-            Enlaces
+            Links
         </h3>
         <ul class="menu-list">
         
@@ -610,7 +430,7 @@ flask</code></pre><p><img src="https://paper-attachments.dropbox.com/s_828333F73
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Categorías
+                Kategorien
             </h3>
             <ul class="menu-list">
             
@@ -622,7 +442,7 @@ flask</code></pre><p><img src="https://paper-attachments.dropbox.com/s_828333F73
         <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            Nube de etiquetas
+            Tag Cloud
         </h3>
         <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/linebot/" style="font-size: 10px;">linebot</a>
     </div>
@@ -634,7 +454,7 @@ flask</code></pre><p><img src="https://paper-attachments.dropbox.com/s_828333F73
             <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            Recientes
+            Letzte Einträge
         </h3>
         
         <article class="media">
@@ -682,7 +502,7 @@ flask</code></pre><p><img src="https://paper-attachments.dropbox.com/s_828333F73
     <div class="card-content">
         <div class="menu">
         <h3 class="menu-label">
-            Archivos
+            Archive
         </h3>
         <ul class="menu-list">
         
@@ -706,7 +526,7 @@ flask</code></pre><p><img src="https://paper-attachments.dropbox.com/s_828333F73
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Etiquetas
+                Tags
             </h3>
             <div class="field is-grouped is-grouped-multiline">
                 
@@ -743,7 +563,7 @@ flask</code></pre><p><img src="https://paper-attachments.dropbox.com/s_828333F73
         <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            Recientes
+            Letzte Einträge
         </h3>
         
         <article class="media">
@@ -791,7 +611,7 @@ flask</code></pre><p><img src="https://paper-attachments.dropbox.com/s_828333F73
     <div class="card-content">
         <div class="menu">
         <h3 class="menu-label">
-            Archivos
+            Archive
         </h3>
         <ul class="menu-list">
         
@@ -815,7 +635,7 @@ flask</code></pre><p><img src="https://paper-attachments.dropbox.com/s_828333F73
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Etiquetas
+                Tags
             </h3>
             <div class="field is-grouped is-grouped-multiline">
                 
@@ -957,7 +777,7 @@ document.addEventListener('DOMContentLoaded', function () {
 </script>
 
 
-<a id="back-to-top" title="Back to Top" href="javascript:;">
+<a id="back-to-top" title="Zurück nach oben" href="javascript:;">
     <i class="fas fa-chevron-up"></i>
 </a>
 <script src="/js/back-to-top.js" defer></script>
@@ -981,7 +801,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <div class="searchbox ins-search">
     <div class="searchbox-container ins-search-container">
         <div class="searchbox-input-wrapper">
-            <input type="text" class="searchbox-input ins-search-input" placeholder="Teclea algo..." />
+            <input type="text" class="searchbox-input ins-search-input" placeholder="Tippen Sie etwas..." />
             <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="searchbox-result-wrapper ins-section-wrapper">
@@ -993,11 +813,11 @@ document.addEventListener('DOMContentLoaded', function () {
     (function (window) {
         var INSIGHT_CONFIG = {
             TRANSLATION: {
-                POSTS: 'Entradas',
-                PAGES: 'Páginas',
-                CATEGORIES: 'Categorías',
-                TAGS: 'Etiquetas',
-                UNTITLED: '(Sin título)',
+                POSTS: 'Posts',
+                PAGES: 'Seiten',
+                CATEGORIES: 'Kategorien',
+                TAGS: 'Tags',
+                UNTITLED: '(Unbenannt)',
             },
             CONTENT_URL: '/content.json',
         };
